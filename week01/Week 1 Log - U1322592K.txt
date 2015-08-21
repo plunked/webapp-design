@@ -1,0 +1,3 @@
+Refreshed knowledge of basic HTML, it has been awhile since I had to actually write pure HTML.
+The enforced practice was useful but I felt that the lesson could have been further streamlined by clearly stating the process of
+working with the system. 

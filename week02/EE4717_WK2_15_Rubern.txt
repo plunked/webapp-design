@@ -1,0 +1,11 @@
+While learning about HTML tables and CSS is interesting, there definitely can be some improvements to the presentation of the module.
+As is, the class is all about coming into class and completing the exercises inside the slides and placing them into the folder.
+The exercises are very boring and repetitive. There is effectively zero need to actually be physically present for the module as the process o
+completing the exercises and uploading them can be achieved through NTULearn.
+
+The only actually interesting part of the lesson is when we work on the case study using the information we had read about/written about previously.
+It might be better provide students with the case study part at the start of the lesson and challenge them to complete it using the information contained in the slides.
+This could also be supplemented by using the internet to search for relevant examples. 
+
+It might be more realistic to provide each student with access to a cloud based platform such as Microsoft Azure or Amazon AWS to host the web server. Through this method,
+the students are able to not only access the website outside the lab, they would also be able to have exposure to real world platforms. 

@@ -1,0 +1,42 @@
+header{
+    text-align: center;
+}
+body{
+    background-color: #6F4E37;
+    color: white;
+}
+nav{
+    float: left;
+    width: 15%;
+}
+
+.site-nav{
+    background-color: #7C5852;
+    list-style: none;
+    padding: 0;
+    width: 75%;
+    border: 1px solid #7C5852;
+    text-align: center;
+}
+
+.site-nav .site-nav-item{
+    border-bottom: 1px solid #7C5852;
+    padding: 5px;
+}
+
+.site-nav .site-nav-item:last-child{
+    border-bottom: 0;
+}
+
+.site-nav .site-nav-item a{
+    color: white;
+    text-decoration: none;
+}
+
+.site-nav .site-nav-item a:hover{
+    text-decoration: underline;
+}
+
+.content {
+    margin-left: 20%;
+}

@@ -6,9 +6,8 @@
 <h1>Book-O-Rama Search Results</h1>
 <?php
   // create short variable names
-  $searchtype=$_REQUEST['searchtype'];
-  $searchterm=trim($_REQUEST['searchterm']);
-  $updatePrice=trim($_REQUEST['inputPrice']);
+  $searchtype=$_POST['searchtype'];
+  $searchterm=trim($_POST['searchterm']);
 
   if (!$searchtype || !$searchterm) {
      echo 'You have not entered search details.  Please go back and try again.';
@@ -26,14 +25,11 @@
      echo 'Error: Could not connect to database.  Please try again later.';
      exit;
   }
-   
 
   $query = "select * from books where ".$searchtype." like '%".$searchterm."%'";
   $result = $db->query($query);
 
   $num_results = $result->num_rows;
-
-  
 
   echo "<p>Number of books found: ".$num_results."</p>";
 
@@ -48,18 +44,23 @@
      echo "<br />Price: ";
      echo stripslashes($row['price']);
      echo "</p>";
+	 
+	echo '<form action="update_price.php" method="post">';
+		echo '<table border="0">';
+			echo '<tr>';
+				echo '<td><input type="submit" value="Update price"></td></td>';
+				echo '<td><input type="text" name="updatePrice" maxlength="10" size="13"></td>';
+			echo '</tr></table>';
+			echo '<input type="hidden" name="isbn" value="'.$row['isbn'].'">';
+	echo '</form>';
+	 
   }
-  $updateQuery = "UPDATE books SET price=".$updatedPrice."where".$row."=1";
-  $result1 = $db->query($updateQuery);
-  print $result1;
 
   $result->free();
   $db->close();
 
 ?>
-<form action="" method="post">
-<input type="submit" name="updatePrice" value="Update Price">
-<input type="text" name="inputPrice">
-</form>
+
+
 </body>
 </html>

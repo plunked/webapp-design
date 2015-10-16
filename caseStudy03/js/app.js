@@ -1,0 +1,1 @@
+$("navBar").hide().show("slow");

@@ -1,0 +1,18 @@
+body{
+	background-image: url("../img/wood_01.jpg");
+	color: white;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+img{
+	width: 200px;
+}
+
+#wrapper{
+	max-width: 940px;
+	margin: 0 auto;
+}

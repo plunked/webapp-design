@@ -1,6 +1,16 @@
+/**********************************
+GENERAL
+***********************************/
 body{
 	background-image: url("../img/wood_01.jpg");
 	color: white;
+	font-family: 'Comfortaa', cursive;
+}
+
+#wrapper{
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 0 5%;
 }
 
 a{
@@ -9,10 +19,70 @@ a{
 }
 
 img{
-	width: 200px;
+	max-width: 100%;
 }
 
-#wrapper{
-	max-width: 940px;
-	margin: 0 auto;
+/*Headings*/
+h1{
+	margin: 15px 0;
+	font-size: 1.75em;
+	font-weight: normal;
+	line-height: 0.8em;
+}
+
+h2{
+	font-size: 0.75em;
+	margin: -5px 0 0;
+	font-weight: normal;
+}
+
+#logo{
+	text-align: center;
+	margin: 0;
+}
+
+/**********************************
+NAVIGATION
+***********************************/
+nav{
+	text-align: center;
+	padding: 10px 0;
+	margin: 20px 0 0;
+}
+
+/**********************************
+FOOTER
+***********************************/
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  padding-top: 50px;
+  color: #ccc;
+}
+
+
+/*Portfolio*/
+
+#gallery{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#gallery li{
+	float: left;
+	width: 45%;
+	margin: 2.5%;
+	background-color: #f5f5f5;
+	color: #bdc3c7;
+}
+
+
+
+/**********************************
+COLORS
+***********************************/
+nav a.active, nav a:hover{
+	color: orange;
 }

@@ -13,6 +13,11 @@ body{
 	padding: 0 5%;
 }
 
+#wrapper h3{
+	text-align: center;
+	margin: 15px 0;
+}
+
 a{
 	text-decoration: none;
 	color: white;
@@ -59,6 +64,12 @@ footer {
   text-align: center;
   padding-top: 50px;
   color: #ccc;
+  clear: both;
+}
+
+aside{
+	clear: both;
+	text-align: center;
 }
 
 
@@ -74,8 +85,12 @@ footer {
 	float: left;
 	width: 45%;
 	margin: 2.5%;
-	background-color: #f5f5f5;
-	color: #bdc3c7;
+}
+
+#gallery li p{
+	margin: 0;
+	padding: 5%;
+	font-size: 0.75em;
 }
 
 

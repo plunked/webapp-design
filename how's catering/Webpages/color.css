@@ -1,0 +1,17 @@
+
+body{ background-color: #ECDFBD;}
+#container { margin-left: auto; margin-right: auto; width:80%; }
+.headers { font-weight:bold; fontfamily: Georgia, "Times New Roman", serif; font-size:1.25em;color:#ECDFBD;margin:0 auto;} 
+.bodys { font-weight:normal; fontfamily: Georgia, "Times New Roman", serif; font-size:1.00em;color:#ECDFBD;text-align=center; align="top"} 
+.footers { font-weight:normal; fontfamily: Georgia, "Times New Roman", serif; font-size:0.75em;color:#ECDFBD;text-align=center;} 
+#boxhead{ background-color:#20457C; center: 60px; padding: 15px 20px;height:30px }
+#boxred{ background-color:#FB6648; margin-left: 100px; padding: 10px 1px;height:60px; width:150px; }
+#boxblack{ background-color:#3B3A35; margin-left: 0px; padding: 9px 10px;height:50px; width:148px;text-decoration: none; }
+#boxred1{ background-color:#FB6648; margin-left: 150px; padding: 10px 1px;height:60px; width:150px; }
+
+#boxbody{ background-color:#20457C; center: 60px; padding: 5px 2px;height:550px }
+#boxredbody { background-color:#FB6648; center: 60px; padding: 2px 2px;height:300px }
+#boxbluebody { background-color:#20457C; center: 60px; padding: 5px 50px;height:290px }
+#boxredmessage { background-color:#FB6648; center: 60px; padding: 2px 2px;height:100px }
+#boxbluemessage { background-color:#20457C; center: 60px; padding: 5px 2px;height:90px }
+#boxfooter{ background-color:#20457C; center: 60px; padding: 5px 200px;height:15px }

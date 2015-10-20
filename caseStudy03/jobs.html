@@ -26,7 +26,7 @@
 		<h3>Jobs</h3>
 		<article>
 			<p>Want to work at JavaJam? Fill out the form below to start your application. Required field are marked with an asterisk.</p>
-			
+			<script>
 			$(document).ready(function(){
 				var $form = $('form');
 				$form.submit(function(){
@@ -37,7 +37,7 @@
 					return false;
 				});
 			});
-	
+			</script>
 			<form action="jobApplication.php" method="post">
 				<p>*Name:<input type="text" name='applicantName' placeholder="Legal Name" required></p>
 				<p>*Email:<input type="email" name="applicantEmail" required></p>

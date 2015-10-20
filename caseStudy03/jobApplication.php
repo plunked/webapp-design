@@ -22,4 +22,5 @@ $query = "INSERT into jobApplicants values
 $result = $db -> query($query);
 
 $db-> close();
+header('Location:/done.php'); //modify the location to an absolute URI for production code
 ?>

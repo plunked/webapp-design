@@ -46,6 +46,6 @@ function compareDates(currentDate, inputDate) {
 	}
 }
 
-$("#applicantStartDate").focusout(function () {
+$("#applicantStartDate").change(function () {
 	compareDates(getCurrentDate(), $(this).val());
 });

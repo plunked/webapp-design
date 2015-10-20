@@ -9,7 +9,7 @@ if(!get_magic_quotes_gpc()){
 	$applicantExperience = addslashes($applicantExperience);
 }
 
-@ $db = new mysqli('localhost', 'root', '', 'myuser');
+@ $db = new mysqli('localhost', 'root', 'password', 'caseStudy');
 
 if(mysqli_connect_errno()){
 	echo "Error: Could not connect to database. Please check if VM is running.";

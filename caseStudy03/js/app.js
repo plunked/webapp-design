@@ -1,29 +1,38 @@
-//Checking date validaton
+//Problem 1 - the start date cannot be before the current date
+//Solution - Find out the current date and compare it with the start date
 
-window.onload = function () {
-	document.getElementById('applicantStartDate').onchange = validateDate;
-}
-
-
-function validateDate() {
+//find out the current date
+function getCurrentDate() {
 	var currentDate = new Date();
-	var currDD = currentDate.getDate();
-	var currMM = currentDate.getMonth() + 1; //January = 0
+	var currDD = String(currentDate.getDate());
+	var currMM = String(currentDate.getMonth() + 1); //January = 0
 	var currYYYY = currentDate.getFullYear();
 
-	if (currDD < 10) {
-		dd = '0' + dd;
+	if (currDD.parseInt() < 10) {
+		currDD = '0' + currDD;
 	}
 
-	if (currMM < 10) {
-		mm = '0' + mm;
+	if (currMM.parseInt() < 10) {
+		currMM = '0' + currMM;
 	}
-	var inputDate = getElementbyId('applicantStartDate').value;
+	
+	var combinedDate = currDD + currMM + currYYYY;
+	return combinedDate;
+}
+
+function compareDates(currentDate, inputDate) {
+	//var inputDate = document.getElementbyId('applicantStartDate').value;
+	
+	//split input date up so it can be compared
 	var inputDD = inputDate.slice(0, 1);
 	var inputMM = inputDate.slice(2, 3);
 	var inputYYYY = inputDate.slice(4);
-	console.log(currYYYY)
 
+	var currDD = currentDate.slice(0, 1);
+	var currMM = currentDate.slice(2, 3);
+	var currYYYY = currentDate.slice(4);
+	
+	//comparing dates
 	if ((inputYYYY > currYYYY)) {
 		document.getElementById("applicantStartDate").setCustomValidity("Wrong Date");
 	}
@@ -35,6 +44,8 @@ function validateDate() {
 	if ((inputMM <= currMM) && (inputYYYY <= currYYYY) && (inputDD > currDD)) {
 		document.getElementById("applicantStartDate").setCustomValidity("Wrong Date");
 	}
-	console.log()
-
 }
+
+$("#applicantStartDate").focusout(function () {
+	compareDates(getCurrentDate(), $(this).val());
+});

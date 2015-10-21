@@ -15,3 +15,19 @@ body{ background-color: #ECDFBD;}
 #boxredmessage { background-color:#FB6648; center: 60px; padding: 2px 2px;height:100px }
 #boxbluemessage { background-color:#20457C; center: 60px; padding: 5px 2px;height:90px }
 #boxfooter{ background-color:#20457C; center: 60px; padding: 5px 200px;height:15px }
+#nav ul {
+  list-style-type: none;
+  margin: 0px;
+  background-color: #181818;
+  float: left;
+}
+
+#nav li {
+  display: block;
+  float: left; 
+  padding: 25px 10px;
+}
+
+#nav li:hover {
+  background-color: #785442;
+}

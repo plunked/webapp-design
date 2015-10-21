@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>JavaJam Coffee House</title>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+	<link href="css/normalize.css" rel="stylesheet" type="text/css">
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header>
+		<a href="index.html" id="logo">
+			<h1>JavaJam Coffee House</h1>
+		</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a class="active" href="#">Menu</a></li>
+				<li><a href="music.html">Music</a></li>
+				<li><a href="jobs.html">Jobs</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="wrapper">
+		<section>
+			<h3>Administration Page</h3>
+			<article>
+				<form action="" method="" id="orderCalc">
+					<table>
+						<tr>
+							<td>Just Java</td>
+							<td>Regular house blend, decaffinated coffee or flavour of the day.</td>
+							<td>Endless Cup</td>
+							<td>$2.00</td>
+							<td>Quantity:
+								<input type="number" name='regJavaQty' id="regJavaQty" value="0">
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Cafe au Lait</td>
+							<td>House blended coffee infused into a smooth steamed milk.</td>
+							<td>Single
+								<br> Double</td>
+							<td>$2.00
+								<br>$3.00</td>
+							<td>Single Quantity:
+								<input type="number" name='singleLatteQty' id="singleLatteQty" value="0">
+							</td>
+							<td>Double Quantity:
+								<input type="number" name='DoubleLatteQty'id="doubleLatteQty" value="0">
+							</td>
+
+						</tr>
+						<tr>
+							<td>Iced Cappucino</td>
+							<td>Sweetened espresso blended with icy-cold milk and served in a chilled glass</td>
+							<td>Single
+								<br> Double</td>
+							<td>$4.75
+								<br>$5.75</td>
+							<td>Single Quantity:
+								<input type="number" name='singleCappQty' id="singleCappQty" value="0">
+							</td>
+							<td>Double Quantity:
+								<input type="number" name='doubleCappQty'id="doubleCappQty" value="0">
+							</td>
+						</tr>
+					</table>
+					<input type="submit" name="subtotalCalc" value="Calculate Subtotal" id="subtotalCalc">
+				</form>
+			</article>
+		</section>
+	</div>
+	<aside>
+		<p>We are located at 54321 Route 42, Ellison Bay, WI 54210, 888-555-5555</p>
+	</aside>
+	<footer>
+		<small>
+			<i>Copyright &copy; 2015 JavaJam Coffee House</i>
+			<br>
+			<a href="mailto:rubern@chakravarthi.com">rubern@chakravarthi.com</a>
+		</small>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js\app.js"></script>
+</body>
+
+</html>

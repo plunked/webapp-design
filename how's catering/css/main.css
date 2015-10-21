@@ -1,8 +1,17 @@
 /**********************************
 GENERAL
 ***********************************/
+
+/**********************************
+Color Codes
+Background - #ECDFBD
+Wrapper - #20457C
+outline color - #FB6648
+box background - #3B3A35
+***********************************/
+
 body{
-	background-image: url("../img/wood_01.jpg");
+	background-color: #ECDFBD;
 	color: white;
 	font-family: 'Comfortaa', cursive;
 }
@@ -43,17 +52,47 @@ h2{
 
 #logo{
 	text-align: center;
-	margin: 0;
+	margin: 0 0 50px;
 }
+
+#transactionBox{
+	background-color: #3B3A35;
+	width: 400px;
+	height: 50px;
+	margin: 50px;
+	float: right;
+}
+
 
 /**********************************
 NAVIGATION
 ***********************************/
 nav{
 	text-align: center;
-	padding: 10px 0;
-	margin: 20px 0 0;
+	background-color: #20457C;
 }
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+nav li{
+	float: left;
+}
+
+nav a{
+	display: block;
+	width: 60px;
+	padding: 20px;
+}
+
+nav a.active, nav a:hover{
+	color: orange;
+}
+
 
 /**********************************
 FOOTER
@@ -98,6 +137,3 @@ aside{
 /**********************************
 COLORS
 ***********************************/
-nav a.active, nav a:hover{
-	color: orange;
-}

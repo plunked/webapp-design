@@ -34,29 +34,23 @@
 		<section>
 			<article>
 				<h3>Package Selector</h3>
-				<ul id="gallery">
-					<li>
-						<img src="img/50.png" alt="$50 Package">
-						<p>Basic $50/pax package consisting of 2 main dishes and 2 sides</p>
-						<form method="packageSelector.php" action="post">
-							<input type="submit" value="50" name="packageChoice">
-						</form>
-					</li>
-					<li>
-						<img src="img/75.png" alt="$75 Package">
-						<p>Basic $75/pax package consisting of 2 main dishes and 2 sides</p>
-						<form method="packageSelector.php" action="post">
-							<input type="submit" value="75" name="packageChoice">
-						</form>
-					</li>
-					<li>
-						<img src="img/100.png" alt="$100 Package">
-						<p>Basic $100/pax package consisting of 2 main dishes and 2 sides</p>
-						<form method="packageSelector.php" action="post">
-							<input type="submit" value="100" name="packageChoice">
-						</form>
-					</li>
-				</ul>
+				<?php 
+				$selectedPackage = $_POST['packageChoice']
+				@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
+
+				if (mysqli_connect_errno()) {
+					echo 'Error: Could not connect to database.  Please try again later.';
+					exit;
+				}
+				
+			$query = "select * from packages where package_cost like".$selectedPackage;
+			$result = $db ->query($query);
+			$num_results = $result->num_rows;
+			
+			
+
+				
+				?>
 			</article>
 		</section>
 	</div>

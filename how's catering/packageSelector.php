@@ -66,10 +66,7 @@
 					$optChoice1Names = array();
 					$optChoice2Names = array();
 					
-					$_SESSION['mainChoice1NameArr'] = $mainChoice1Names;
-					$_SESSION['mainChoice2NameArr'] = $mainChoice2Names;
-					$_SESSION['optChoice1NameArr'] = $optChoice1Names;
-					$_SESSION['optChoice2NameArr'] = $optChoice2Names;
+					
 				
 					for($i=0;$i<count($mainChoice1Arr);$i++){
 						$populatingDishes = "select dish_name from dishes where dish_id = '".$mainChoice1Arr[$i]."'";
@@ -102,28 +99,33 @@
 						$optChoice2Names[] = $dishRow['dish_name'];
 						$dishResult->free();
 					}
+					
+					$_SESSION['mainChoice1NameArr'] = $mainChoice1Names;
+					$_SESSION['mainChoice2NameArr'] = $mainChoice2Names;
+					$_SESSION['optChoice1NameArr'] = $optChoice1Names;
+					$_SESSION['optChoice2NameArr'] = $optChoice2Names;
 									
 					
-					echo "<form method='POST' action='dishConfirmation.php'>";
-					echo "<select id='main1Selection'>";
+					echo "<form method='POST' action='dishConfirmation.php' id='packageSelect'>";
+					echo "<select name='main1Selection' form='packageSelect'>";
 					echo '<option value="'.$mainChoice1Arr[0].'">'.$mainChoice1Names[0].'</option>';
 					echo '<option value="'.$mainChoice1Arr[1].'">'.$mainChoice1Names[1].'</option>';
 					echo '<option value="'.$mainChoice1Arr[2].'">'.$mainChoice1Names[2].'</option>';
 					echo '</select>';
 					
-					echo "<select id='main2Selection'>";
+					echo "<select name='main2Selection' form='packageSelect'>";
 					echo '<option value="'.$mainChoice2Arr[0].'">'.$mainChoice2Names[0].'</option>';
 					echo '<option value="'.$mainChoice2Arr[1].'">'.$mainChoice2Names[1].'</option>';
 					echo '<option value="'.$mainChoice2Arr[2].'">'.$mainChoice2Names[2].'</option>';
 					echo '</select>';
 					
-					echo "<select id='opt1Selection'>";
+					echo "<select name='opt1Selection' form='packageSelect'>";
 					echo '<option value="'.$optChoice1Arr[0].'">'.$optChoice1Names[0].'</option>';
 					echo '<option value="'.$optChoice1Arr[1].'">'.$optChoice1Names[1].'</option>';
 					echo '<option value="'.$optChoice1Arr[2].'">'.$optChoice1Names[2].'</option>';
 					echo '</select>';
 					
-					echo "<select id='opt2Selection'>";
+					echo "<select name='opt2Selection' form='packageSelect'>";
 					echo '<option value="'.$optChoice2Arr[0].'">'.$optChoice2Names[0].'</option>';
 					echo '<option value="'.$optChoice2Arr[1].'">'.$optChoice2Names[1].'</option>';
 					echo '<option value="'.$optChoice2Arr[2].'">'.$optChoice2Names[2].'</option>';

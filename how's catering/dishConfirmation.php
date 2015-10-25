@@ -36,33 +36,41 @@
 				<h3>Dish Confirmation</h3>
 				<?php 
 					session_start();
-					$mainChoice1 = $_POST['main1Selection'];
+					$mainChoice1 = $_POST['main1Selection'] -1;
 					$mainChoice2 = $_POST['main2Selection'];
 					$optChoice1 = $_POST['opt1Selection'];
 					$optChoice2 = $_POST['opt2Selection'];
 					
-					$mainChoice1Names = array();
-					$mainChoice2Names = array();
-					$optChoice1Names = array();
-					$optChoice2Names = array();
-					
-					$mainChoice1Names = $_SESSION['mainChoice1NameArr'];
-					$mainChoice2Names = $_SESSION['mainChoice2NameArr'];
-					$optChoice1Names = $_SESSION['optChoice1NameArr'];
-					$optChoice2Names = $_SESSION['optChoice2NameArr'];
 
+			
+					foreach($_SESSION['mainChoice1NameArr'] as $key=>$value){
+						$mainChoice1Names[$key] = $value;
+					}
 					
+					foreach($_SESSION['mainChoice2NameArr'] as $key=>$value){
+						$mainChoice2Names[$key] = $value;				
+					}
+					
+					foreach($_SESSION['optChoice1NameArr'] as $key=>$value){
+						$optChoice1Names[$key] = $value;				
+					}
+					
+					foreach($_SESSION['optChoice2NameArr'] as $key=>$value){
+						$optChoice2Names[$key] = $value;				
+					}
+
+
 					echo "<h4>Dish 1<br></h4";
-					echo $mainChoice1Names[$mainChoice1];
+					echo "<p>".$mainChoice1Names[$mainChoice1]."</p>";
 					
 					echo "<h4>Dish 2<br></h4";
-					echo $mainChoice1Names[$mainChoice1];
+					echo "<p>".$mainChoice2Names[$mainChoice2]."</p>";
 					
 					echo "<h4>Dish 3<br></h4";
-					echo $mainChoice1Names[$mainChoice1];
+					echo "<p>".$optChoice1Names[$optChoice1]."</p>";
 					
 					echo "<h4>Dish 4<br></h4";
-					echo $mainChoice1Names[$mainChoice1];
+					echo "<p>".$optChoice2Names[$optChoice2]."</p>";
 				
 				?>
 			</article>

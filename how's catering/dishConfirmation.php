@@ -37,9 +37,9 @@
 				<?php 
 					session_start();
 					$mainChoice1 = $_POST['main1Selection'] -1;
-					$mainChoice2 = $_POST['main2Selection'];
-					$optChoice1 = $_POST['opt1Selection'];
-					$optChoice2 = $_POST['opt2Selection'];
+					$mainChoice2 = $_POST['main2Selection'] -1;
+					$optChoice1 = $_POST['opt1Selection'] -1;
+					$optChoice2 = $_POST['opt2Selection']-1;
 					
 
 			
@@ -71,8 +71,19 @@
 					
 					echo "<h4>Dish 4<br></h4";
 					echo "<p>".$optChoice2Names[$optChoice2]."</p>";
+					
+					$_SESSION['mainChoice1'] = $mainChoice1.",".$mainChoice1Names[$mainChoice1];
+					
+					$_SESSION['mainChoice2'] = $mainChoice2.",".$mainChoice2Names[$mainChoice2];
+					
+					$_SESSION['optChoice1'] = $optChoice1.",".$optChoice1Names[$optChoice1];
+					
+					$_SESSION['optChoice2'] = $optChoice2.",".$optChoice2Names[$optChoice2];
 				
 				?>
+				<form method="post" action="deliveryDetails.php">
+					<input type="submit" value="Next">
+				</form>
 			</article>
 		</section>
 	</div>

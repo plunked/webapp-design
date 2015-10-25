@@ -105,7 +105,7 @@
 					$_SESSION['optChoice1NameArr'] = $optChoice1Names;
 					$_SESSION['optChoice2NameArr'] = $optChoice2Names;
 									
-					
+					echo $mainChoice1Arr[0];
 					echo "<form method='POST' action='dishConfirmation.php' id='packageSelect'>";
 					echo "<select name='main1Selection' form='packageSelect'>";
 					echo '<option value="'.$mainChoice1Arr[0].'">'.$mainChoice1Names[0].'</option>';

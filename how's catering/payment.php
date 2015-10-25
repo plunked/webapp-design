@@ -53,7 +53,7 @@
 						exit;
 					}
 					
-					$query = "INSERT INTO transactions (transactionid, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, payment_method, payment_amount) values (null, '".$contact_name."','".$contact_number."', '".$contact_email."', '".$delivery_address."','".$delivery_time."', '".$collection_time."','".$payment_method."', '".$payment_amount."')";
+					$query = "INSERT INTO transactions (transactionid, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, payment_method, payment_amount) values (null, '".$contact_name."',".$contact_number.", '".$contact_email."', '".$delivery_address."','".$delivery_time."', '".$collection_time."','".$payment_method."', ".$payment_amount.")";
 							
 					$result = $db->query($query);
 					if ($result) {

@@ -21,7 +21,8 @@ create table if not exists transactions(
 	delivery_time char(140) not null,
 	collection_time char(140) not null,
 	payment_method char(140) not null,
-	payment_amount tinyint unsigned not null	
+	payment_amount tinyint unsigned not null,
+	package_content text not null	
 );
 
 create table if not exists dishes(

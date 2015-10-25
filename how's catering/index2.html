@@ -7,6 +7,16 @@
 	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
 	<link href="css/normalize.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+	var image1=new Image()
+	image1.src="img/slide1.jpg"
+	var image2=new Image()
+	image2.src="img/slide2.jpg"
+	var image3=new Image()
+	image3.src="img/slide3.jpg"
+	
+	
+	</script>
 </head>
 
 <body>
@@ -34,12 +44,21 @@
 		<section>
 
 			<article>
-				<div id="slideShowImages">
-    <img src="img/slide1.jpg" alt="Slide 1" />
-    <img src="img/slide2.jpg" alt="Slide 2" />
-    <img src="img/slide3.jpg" alt="Slide 3" />    
-    <img src="img/slide4.jpg" alt="Slide 4" />
-  </div>  
+	<img src="img/slide1.jpg" name="slide" width="800" height="300">
+	<script type="text/javascript">
+	var step=1
+	function slideit(){
+	
+	if(step<4)
+	{document.images.slide.src=eval("image"+step+".src")
+	step++}
+	else
+	step=1
+	setTimeout("slideit()",2500)
+	}
+	slideit()
+	</script>
+				
 				<h3>Food Glorious Food</h3>
 			</article>
 		</section>

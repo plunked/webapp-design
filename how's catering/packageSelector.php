@@ -37,6 +37,7 @@
 				<?php 
 				session_start();
 					$selectedPackage = $_POST['packageChoice'];
+
 					
 					@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 	
@@ -45,6 +46,7 @@
 						exit;
 					}
 					$_SESSION['package_cost'] = $selectedPackage;
+
 					$query = "select * from packages where package_cost like '%".$selectedPackage."%'";
 					$result = $db ->query($query);
 					$row = $result->fetch_assoc();
@@ -106,7 +108,7 @@
 					$_SESSION['optChoice1NameArr'] = $optChoice1Names;
 					$_SESSION['optChoice2NameArr'] = $optChoice2Names;
 									
-					echo $mainChoice1Arr[0];
+
 					echo "<form method='POST' action='dishConfirmation.php' id='packageSelect'>";
 					echo "<select name='main1Selection' form='packageSelect'>";
 					echo '<option value="'.$mainChoice1Arr[0].'">'.$mainChoice1Names[0].'</option>';

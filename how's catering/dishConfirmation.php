@@ -59,7 +59,7 @@
 						$optChoice2Names[$key] = $value;				
 					}
 
-
+					echo $_SESSION['package_cost'];
 					echo "<h4>Dish 1<br></h4";
 					echo "<p>".$mainChoice1Names[$mainChoice1]."</p>";
 					
@@ -80,7 +80,8 @@
 					
 					$_SESSION['optChoice2'] = $optChoice2.",".$optChoice2Names[$optChoice2];
 					
-				
+					$_SESSION['package_content'] = $mainChoice1Names[$mainChoice1].','.$mainChoice2Names[$mainChoice2].','.$optChoice1Names[$optChoice1].','.$optChoice2Names[$optChoice2];
+								
 				?>
 				<form method="post" action="deliveryDetails.php">
 					<input type="submit" value="Next">

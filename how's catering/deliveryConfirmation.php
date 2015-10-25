@@ -51,18 +51,30 @@
 					echo "<p>Delivery Time: ".$delivery_time."</p>";
 					echo "<p>Collection Time: ".$collection_time."</p>";
 					echo "<p>Payment Method: ".$payment_method."</p>";
-					echo "<p>Payment Amount: ".$_SERVER["package_cost"]."</p>";
+					echo "<p>Payment Amount: ".$_SESSION['package_cost']."</p>";
+					echo "<p>Package Content: ".$_SESSION['package_content']."</p>";
+	
 					
 					echo "<form method='post' action='payment.php'>";
 					
-					echo "<input type='hidden' value='".$contact_name."' name='contact_name'";
-					echo "<input type='hidden' value='".$contact_number."' name='contact_number'";
-					echo "<input type='hidden' value='".$contact_email."' name='contact_email'";
-					echo "<input type='hidden' value='".$delivery_address."' name='delivery_address'";
-					echo "<input type='hidden' value='".$delivery_time."' name='delivery_time'";
-					echo "<input type='hidden' value='".$collection_time."' name='collection_time'";
-					echo "<input type='hidden' value='".$payment_method."' name='payment_method'";
-					echo "<input type='hidden' value='".$_SERVER["package_cost"]."' name='payment_amount'";
+					echo "<input type='hidden' value='".$contact_name."' name='contact_name'>";
+					
+					echo "<input type='hidden' value='".$contact_number."' name='contact_number'>";
+					
+					echo "<input type='hidden' value='".$contact_email."' name='contact_email'>";
+					
+					echo "<input type='hidden' value='".$delivery_address."' name='delivery_address'>";
+					
+					echo "<input type='hidden' value='".$delivery_time."' name='delivery_time'>";
+					
+					echo "<input type='hidden' value='".$collection_time."' name='collection_time'>";
+					
+					echo "<input type='hidden' value='".$payment_method."' name='payment_method'>";
+					
+					echo "<input type='hidden' value='".$_SESSION["package_cost"]."' name='payment_amount'>";
+					
+					echo "<input type='hidden' value='".$_SESSION["package_content"]."' name='package_content'>";
+					
 					echo "<p><input type='submit' value='Confirm Details'></p>";
 					
 					echo "</form>";				

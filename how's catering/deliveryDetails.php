@@ -47,6 +47,11 @@
 						<option value="creditcard">Credit Card</option>
 						</select>
 						</p>
+					<?php
+					session_start();
+					echo $_SESSION['package_cost'];
+					echo $_SESSION['package_content'];
+					?>
 					<p><input type="submit" value="Confirm Details"></p>
 				</form>
 			</article>

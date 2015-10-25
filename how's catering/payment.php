@@ -45,6 +45,7 @@
 					$collection_time = $_POST['collection_time'];
 					$payment_method = $_POST['payment_method'];
 					$payment_amount = $_POST['payment_amount'];
+					$package_content = $_POST['package_content'];
 					
 					@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 	
@@ -53,7 +54,33 @@
 						exit;
 					}
 					
-					$query = "INSERT INTO transactions (transactionid, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, payment_method, payment_amount) values (null, '".$contact_name."',".$contact_number.", '".$contact_email."', '".$delivery_address."','".$delivery_time."', '".$collection_time."','".$payment_method."', ".$payment_amount.")";
+					echo $contact_name;
+					echo $contact_number;
+					echo $contact_email;
+					echo $delivery_address;
+					echo $delivery_time;
+					echo $collection_time;
+					echo $payment_method;
+					echo $payment_amount;
+					echo $package_content;
+					
+					$query = "
+					INSERT INTO transactions
+					 (transactionid, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, payment_method, payment_amount, package_content) 
+					 VALUES";
+					 $query .="(null,";
+					 $query .="'".$contact_name."',";
+					 $query .="".$contact_number.",";
+					 $query .="'".$contact_email."',";
+					 $query .="'".$delivery_address."',";
+					 $query .="'".$delivery_time."',";
+					 $query .="'".$collection_time."',";
+					 $query .="'".$payment_method."',";
+					 $query .="".$payment_amount.",";
+					 $query .="'".$package_content."'";
+					 $query .= ")";
+					
+					echo $query;
 							
 					$result = $db->query($query);
 					if ($result) {

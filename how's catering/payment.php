@@ -33,7 +33,8 @@
 	<div id="wrapper">
 		<section>
 			<article>
-				<h3>Delivery Details Confirmation</h3>
+				<h3>Payment Portal Redirect</h3>
+				<p>Filler Payment Filler</p>
 				<?php 
 					session_start();
 					$contact_name = $_POST['contact_name'];
@@ -43,29 +44,24 @@
 					$delivery_time = $_POST['delivery_time'];
 					$collection_time = $_POST['collection_time'];
 					$payment_method = $_POST['payment_method'];
+					$payment_amount = $_POST['payment_amount'];
 					
-					echo "<p>Name: ".$contact_name."</p>";
-					echo "<p>Contact Number: ".$contact_number."</p>";
-					echo "<p>Contact Email: ".$contact_email."</p>";
-					echo "<p>Delivery Address: ".$delivery_address."</p>";
-					echo "<p>Delivery Time: ".$delivery_time."</p>";
-					echo "<p>Collection Time: ".$collection_time."</p>";
-					echo "<p>Payment Method: ".$payment_method."</p>";
-					echo "<p>Payment Amount: ".$_SERVER["package_cost"]."</p>";
+					@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
+	
+					if (mysqli_connect_errno()) {
+						echo 'Error: Could not connect to database.  Please try again later.';
+						exit;
+					}
 					
-					echo "<form method='post' action='payment.php'>";
-					
-					echo "<input type='hidden' value='".$contact_name."' name='contact_name'";
-					echo "<input type='hidden' value='".$contact_number."' name='contact_number'";
-					echo "<input type='hidden' value='".$contact_email."' name='contact_email'";
-					echo "<input type='hidden' value='".$delivery_address."' name='delivery_address'";
-					echo "<input type='hidden' value='".$delivery_time."' name='delivery_time'";
-					echo "<input type='hidden' value='".$collection_time."' name='collection_time'";
-					echo "<input type='hidden' value='".$payment_method."' name='payment_method'";
-					echo "<input type='hidden' value='".$_SERVER["package_cost"]."' name='payment_amount'";
-					echo "<p><input type='submit' value='Confirm Details'></p>";
-					
-					echo "</form>";				
+					$query = "INSERT INTO transactions (transactionid, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, payment_method, payment_amount) values (null, '".$contact_name."','".$contact_number."', '".$contact_email."', '".$delivery_address."','".$delivery_time."', '".$collection_time."','".$payment_method."', '".$payment_amount."')";
+							
+					$result = $db->query($query);
+					if ($result) {
+						echo  $db->affected_rows."transaction added";
+					} else {
+						echo "An error has occurred.  The transaction failed.";
+					}
+								
 				?>
 				
 			</article>

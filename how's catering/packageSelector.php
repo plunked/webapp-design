@@ -37,6 +37,7 @@
 				<?php 
 				session_start();
 					$selectedPackage = $_POST['packageChoice'];
+					
 					@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 	
 					if (mysqli_connect_errno()) {

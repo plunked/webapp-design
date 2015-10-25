@@ -79,6 +79,7 @@
 					$_SESSION['optChoice1'] = $optChoice1.",".$optChoice1Names[$optChoice1];
 					
 					$_SESSION['optChoice2'] = $optChoice2.",".$optChoice2Names[$optChoice2];
+					
 				
 				?>
 				<form method="post" action="deliveryDetails.php">

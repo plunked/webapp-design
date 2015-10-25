@@ -43,7 +43,7 @@
 						echo 'Error: Could not connect to database.  Please try again later.';
 						exit;
 					}
-					
+					$_SESSION['package_cost'] = $selectedPackage;
 					$query = "select * from packages where package_cost like '%".$selectedPackage."%'";
 					$result = $db ->query($query);
 					$row = $result->fetch_assoc();

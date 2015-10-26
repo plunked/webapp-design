@@ -42,7 +42,7 @@ for($i=0;$i<count($dishes);$i++){
   $dishResult = $db -> query($query);
 						
   $dishRow = $dishResult->fetch_assoc();
-  $mainChoice1Names[] = $dishRow['dish_name'];
+  $mainChoice1Names[i] = $dishRow['dish_name'];
   //echo .$mainChoice1Names[].;
   $dishResult->free();
   }

@@ -36,6 +36,8 @@
 						echo 'Error: Could not connect to database.  Please try again later.';
 						exit;
 					}
+					$sql = "dish_img_location, dish_name, dish_description FROM dishes";
+					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
      				// output data of each row
      					while($row = $result->fetch_assoc()) {

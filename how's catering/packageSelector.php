@@ -110,30 +110,39 @@
 									
 
 					echo "<form method='POST' action='dishConfirmation.php' id='packageSelect'>";
+					echo "<p>Main Dish 1<p>";
 					echo "<select name='main1Selection' form='packageSelect'>";
 					echo '<option value="'.$mainChoice1Arr[0].'">'.$mainChoice1Names[0].'</option>';
 					echo '<option value="'.$mainChoice1Arr[1].'">'.$mainChoice1Names[1].'</option>';
 					echo '<option value="'.$mainChoice1Arr[2].'">'.$mainChoice1Names[2].'</option>';
 					echo '</select>';
+					echo "<br>";
 					
+					echo "<p>Main Dish 2<p>";
 					echo "<select name='main2Selection' form='packageSelect'>";
 					echo '<option value="'.$mainChoice2Arr[0].'">'.$mainChoice2Names[0].'</option>';
 					echo '<option value="'.$mainChoice2Arr[1].'">'.$mainChoice2Names[1].'</option>';
 					echo '<option value="'.$mainChoice2Arr[2].'">'.$mainChoice2Names[2].'</option>';
 					echo '</select>';
+					echo "<br>";
 					
+					echo "<p>Side Dish 1<p>";
 					echo "<select name='opt1Selection' form='packageSelect'>";
 					echo '<option value="'.$optChoice1Arr[0].'">'.$optChoice1Names[0].'</option>';
 					echo '<option value="'.$optChoice1Arr[1].'">'.$optChoice1Names[1].'</option>';
 					echo '<option value="'.$optChoice1Arr[2].'">'.$optChoice1Names[2].'</option>';
 					echo '</select>';
+					echo "<br>";
 					
+					echo "<p>Side Dish 1<p>";
 					echo "<select name='opt2Selection' form='packageSelect'>";
 					echo '<option value="'.$optChoice2Arr[0].'">'.$optChoice2Names[0].'</option>';
 					echo '<option value="'.$optChoice2Arr[1].'">'.$optChoice2Names[1].'</option>';
 					echo '<option value="'.$optChoice2Arr[2].'">'.$optChoice2Names[2].'</option>';
 					echo '</select>';
+					echo "<br>";
 					echo '<input type="submit" value="Confirm">';
+					
 					echo "</form>";
 					
 					$result->free();

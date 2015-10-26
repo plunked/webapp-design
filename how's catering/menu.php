@@ -46,11 +46,15 @@ for($i=0;$i<count($dish_name);$i++){
   //echo .$mainChoice1Names[].;
   $dishResult->free();
   }
-  
+  echo '<table align="center" border="1">';
+  echo '<tr><td>'.$mainChoice1Names[0].'</td>';
+  echo '<td>"'.$mainChoice1Names[1].'</td>';
+  echo '<td>"'.$mainChoice1Names[2].'</td></tr>';
+  echo '</table>';
 	?>
 	<table align="center" border="1">
 	<tr>	<td>Image</td>
-			<td>Chicken</td>
+			<td>description1</td>
 			<td>description2</td>
 			<td>description3</td>
 	</tr>

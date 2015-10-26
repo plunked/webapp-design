@@ -37,7 +37,7 @@
      echo 'Error: Could not connect to database.  Please try again later.';
      exit;
   }
-for($i=0;$i<count($dish_name);$i++){
+for($i=0;$i<count($dishes);$i++){
   $query = "select dish_name from dishes ";
   $dishResult = $db -> query($query);
 						
@@ -48,8 +48,8 @@ for($i=0;$i<count($dish_name);$i++){
   }
   echo '<table align="center" border="1">';
   echo '<tr><td>'.$mainChoice1Names[0].'</td>';
-  echo '<td>"'.$mainChoice1Names[1].'</td>';
-  echo '<td>"'.$mainChoice1Names[2].'</td></tr>';
+  echo '<td>'.$mainChoice1Names[1].'</td>';
+  echo '<td>'.$mainChoice1Names[2].'</td></tr>';
   echo '</table>';
 	?>
 	<table align="center" border="1">

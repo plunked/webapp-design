@@ -28,6 +28,7 @@
 			</ul>
 		</nav>
 	</header>
+	<body>
 	<?php
 	
 	@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
@@ -58,6 +59,7 @@ for($i=0;$i<count($dish_name);$i++){
 			<td>description3</td>
 	</tr>
 	</table>
+	</body>
 	 
 <!--link to database for menu images  -->	
 <div id="wrapperfoot">

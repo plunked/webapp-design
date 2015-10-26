@@ -28,6 +28,22 @@
 			</ul>
 		</nav>
 	</header>
+	<?php
+	
+	@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
+	
+					if (mysqli_connect_errno()) {
+						echo 'Error: Could not connect to database.  Please try again later.';
+						exit;
+					}
+					if ($result->num_rows > 0) {
+     				// output data of each row
+     					while($row = $result->fetch_assoc()) {
+         					echo "<br> id: ". $row["id"]. " - Name: ". $row["firstname"]. " " . $row["lastname"] . "<br>";
+    					 }
+	} else {
+     echo "0 results";
+	?>
 	<table align="center" border="1">
 	<tr>	<td>Image</td>
 			<td>Chicken</td>

@@ -15,7 +15,7 @@
 		</a>
 		<div id="transactionBox">
 			<form action="" action="post">
-				<h5>Transaction Enquiry:</h5>
+				<span id="h5">Transaction Enquiry:</span>
 				<input type="text" placeholder="Transaction Reference Number">
 				<input type="submit" value=">">
 			</form>
@@ -28,7 +28,54 @@
 			</ul>
 		</nav>
 	</header>
+	<body>
+	<?php
 	
+	$conn = new mysql_connect('localhost', 'root', 'password');
+
+  if ($conn) 
+  {
+     die('Could not connect: ' . mysql_error());
+     exit;
+  }
+  
+  
+  $sql = 'SELECT dish_name, dish_type, 
+               dish_description, dish_img_location
+        FROM dishes';
+  mysql_select_db('f33ee');
+  $retval = mysql_query( $sql, $conn );
+	
+  if(! $retval )
+  {
+	 die('Could not get data: ' . mysql_error());
+  }
+	while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
+	{
+    echo "Tutorial ID :{$row['dish_name']}  <br> ".
+         "Title: {$row['dish_type']} <br> ".
+         "Author: {$row['dish_discription']} <br> ".
+         "Submission Date : {$row['dish_img_location']} <br> ".
+         "--------------------------------<br>";
+	} 
+	echo "Fetched data successfully\n";
+mysql_close($conn);
+
+	?>
+	<table align="center" border="1">
+	<tr>	<td>Image</td>
+			<td>description1</td>
+			<td>description2</td>
+			<td>description3</td>
+	</tr>
+	<tr>	<td>Image</td>
+			<td>description1</td>
+			<td>description2</td>
+			<td>description3</td>
+	</tr>
+	</table>
+	</body>
+	 
 <!--link to database for menu images  -->	
 <div id="wrapperfoot">
 <footer>

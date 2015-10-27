@@ -37,25 +37,20 @@
      echo 'Error: Could not connect to database.  Please try again later.';
      exit;
   }
-  $result = mysql_query("SELECT * from dishes");
-  $row=mysl_fetch_array($result);
-  echo $row['dish_name'];
-  
-for($i=0;$i<count($dishes);$i++){
-  $query = "select * from dishes ";
-  $dishResult = $db -> query($query);
-						
-  $dishRow = $dishResult->fetch_assoc();
-  
-  $mainChoice1Names[i] = $dishRow['dish_name'];
-  //echo .$mainChoice1Names[].;
-  $dishResult->free();
-  }
-  echo '<table align="center" border="1">';
-  echo '<tr><td>'.$mainChoice1Names[0].'</td>';
-  echo '<td>'.$mainChoice1Names[1].'</td>';
-  echo '<td>'.$mainChoice1Names[2].'</td></tr>';
-  echo '</table>';
+  mysql_select_db('dishes');
+	$retval = mysql_query( $sql, $conn );
+	if(! $retval )
+	{
+  die('Could not get data: ' . mysql_error());
+	}
+	while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
+{
+    echo "Tutorial ID :{$row['dish_name']}  <br> ".
+         "Title: {$row['dish_type']} <br> ".
+         "Author: {$row['dish_discription']} <br> ".
+         "Submission Date : {$row['dish_img_location']} <br> ".
+         "--------------------------------<br>";
+} 
 	?>
 	<table align="center" border="1">
 	<tr>	<td>Image</td>

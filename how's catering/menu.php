@@ -37,12 +37,16 @@
      echo 'Error: Could not connect to database.  Please try again later.';
      exit;
   }
-  echo 'name'.SELECT dish_name from dishes.;
+  $result = mysql_query("SELECT dish_name from dishes");
+  $row=mysl_fetch_array($result);
+  echo $row['dish_name'];
+  
 for($i=0;$i<count($dishes);$i++){
   $query = "select * from dishes ";
   $dishResult = $db -> query($query);
 						
   $dishRow = $dishResult->fetch_assoc();
+  
   $mainChoice1Names[i] = $dishRow['dish_name'];
   //echo .$mainChoice1Names[].;
   $dishResult->free();

@@ -37,7 +37,7 @@
      echo 'Error: Could not connect to database.  Please try again later.';
      exit;
   }
-  echo SELECT dish_name from dishes;
+  echo 'name'.SELECT dish_name from dishes.;
 for($i=0;$i<count($dishes);$i++){
   $query = "select * from dishes ";
   $dishResult = $db -> query($query);

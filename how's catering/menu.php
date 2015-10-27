@@ -31,29 +31,33 @@
 	<body>
 	<?php
 	
-	@ $db = new mysqli('localhost', 'root', 'password', 'f33ee');
+	$conn = new mysql_connect('localhost', 'root', 'password');
 
-  if (mysqli_connect_errno()) {
-     echo 'Error: Could not connect to database.  Please try again later.';
+  if ($conn) 
+  {
+     die('Could not connect: ' . mysql_error());
      exit;
   }
-  sql = 'SELECT dish_name, dish_type, 
+  
+  
+  $sql = 'SELECT dish_name, dish_type, 
                dish_description, dish_img_location
         FROM dishes';
-  mysql_select_db('dishes');
-	$retval = mysql_query( $sql, $conn );
-	if(! $retval )
-	{
-  die('Could not get data: ' . mysql_error());
-	}
+  mysql_select_db('f33ee');
+  $retval = mysql_query( $sql, $conn );
+	
+  if(! $retval )
+  {
+	 die('Could not get data: ' . mysql_error());
+  }
 	while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
-{
+	{
     echo "Tutorial ID :{$row['dish_name']}  <br> ".
          "Title: {$row['dish_type']} <br> ".
          "Author: {$row['dish_discription']} <br> ".
          "Submission Date : {$row['dish_img_location']} <br> ".
          "--------------------------------<br>";
-} 
+	} 
 	?>
 	<table align="center" border="1">
 	<tr>	<td>Image</td>

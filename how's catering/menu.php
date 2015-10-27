@@ -37,6 +37,9 @@
      echo 'Error: Could not connect to database.  Please try again later.';
      exit;
   }
+  sql = 'SELECT dish_name, dish_type, 
+               dish_description, dish_img_location
+        FROM dishes';
   mysql_select_db('dishes');
 	$retval = mysql_query( $sql, $conn );
 	if(! $retval )

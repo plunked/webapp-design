@@ -58,6 +58,9 @@
          "Submission Date : {$row['dish_img_location']} <br> ".
          "--------------------------------<br>";
 	} 
+	echo "Fetched data successfully\n";
+mysql_close($conn);
+
 	?>
 	<table align="center" border="1">
 	<tr>	<td>Image</td>

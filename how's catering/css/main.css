@@ -22,9 +22,9 @@ body{
 #wrapper{
 	max-width: 940px;
 	margin: 10px auto 10px auto;
-	padding: 20px;
-	background-color: #20457C !important;
+	background-color: #20457C;
 	overflow: hidden;
+	padding: 20px;
 	text-align:center;
 }
 

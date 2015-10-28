@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<a href="index2.html" id="logo">
+		<a href="index.html" id="logo">
 			<img src="img/Logo trans.png">
 		</a>
 		<div id="transactionBox">
@@ -31,35 +31,37 @@
 	<body>
 	<?php
 	
-	$conn = new mysql_connect('localhost', 'root', 'password');
+	@ $db = new mysqli('localhost', 'root', 'password', 'f33ee');
 
-  if ($conn) 
-  {
-     die('Could not connect: ' . mysql_error());
+  if (mysqli_connect_errno()) {
+     echo 'Error: Could not connect to database.  Please try again later.';
      exit;
   }
   
   
-  $sql = 'SELECT dish_name, dish_type, 
+  sql = 'SELECT dish_name, dish_type, 
                dish_description, dish_img_location
         FROM dishes';
   mysql_select_db('f33ee');
-  $retval = mysql_query( $sql, $conn );
-	
-  if(! $retval )
-  {
-	 die('Could not get data: ' . mysql_error());
-  }
-	while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
+	$retval = mysql_query( $sql, $conn );
+	if(! $retval )
 	{
+  die('Could not get data: ' . mysql_error());
+	}
+	while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
+{
     echo "Tutorial ID :{$row['dish_name']}  <br> ".
          "Title: {$row['dish_type']} <br> ".
          "Author: {$row['dish_discription']} <br> ".
          "Submission Date : {$row['dish_img_location']} <br> ".
          "--------------------------------<br>";
+
 	} 
 	echo "Fetched data successfully\n";
 mysql_close($conn);
+
+
+} 
 
 	?>
 	<table align="center" border="1">

@@ -1,39 +1,87 @@
-<!doctype html>
-<html lang=“en”>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>How's Catering Services</title>
-<meta charset=“utf-8”>
-<link rel="stylesheet" href="color.css">
+	<title>How's Catering</title>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+	<link href="css/normalize.css" rel="stylesheet" type="text/css">
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+	var image1=new Image()
+	image1.src="img/slide1.jpg"
+	var image2=new Image()
+	image2.src="img/slide2.jpg"
+	var image3=new Image()
+	image3.src="img/slide3.jpg"
+	
+	
+	</script>
 </head>
+
 <body>
-<div id="nav">
-    <img src="/images/renderedicon.png" alt="Icon" height="57" width="57"/>
-      <ul>
-        <li><a href="#">One1</a></li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
-        <li><a href="#">Four</a></li>
-      </ul>
-    </div>
-<div id="container">
-<a href="index.html"><img src="logo.png" alt="birthday cake" height="150" width="450">
-<div id="boxhead">
-<nav id="boxred">
-<span id="boxblack"><a href="menu.html"><span class="headers">MENU</span></a></span></span>
-<span id="boxred1">
-<span id="boxblack"><a href="ordering.html"><span class="headers">ORDERING</span></a></span></span>
-<span id="boxred1">
-<span id="boxblack"><a href="contact.html"><span class="headers">CONTACT US</span></a></span></nav>
-</div>
-<br>
-<div id="boxbody"><br><br><br>
-<div id="boxredbody"><div id="boxbluebody"></div></div>
-<br><span class="headers">Company Message
-</span>
-<div id="boxredmessage"><div id="boxbluemessage"><span class="bodys">From the food to the service, an event is a reflection of the host. We make sure that we create the right look, feel, and taste for your event. Whether you are planning a holiday celebration, training session, company picnic or reception for clients, let us be your partner for a successful event.</span></div></div>
-</div>
-<br>
-<div id="boxfooter"><span class="footers">Privacy Policy &#124 Terms &#124 How's Catering&#8482 &copy 2015</span></div>
-</div>
+	<header>
+		<a href="index2.html" id="logo">
+			<img src="img/Logo trans.png">
+		</a>
+		<div id="transactionBox">
+			<form action="" action="post">
+				<span id="h5">Transaction Enquiry:</span>
+				<input type="text" placeholder="Transaction Reference Number">
+				<input type="submit" value=">">
+			</form>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="menu.php"><h1>Menu</h1></a></li>
+				<li><a href="ordering.html"><h1>Ordering</h1></a></li>
+				<li><a href="contact.html"><h1>Contact Us</h1></a></li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+	<div id="wrapper">
+		<section>
+
+			<article>
+	<img src="img/slide1.jpg" name="slide" width="800" height="300" align="centre">
+	<script type="text/javascript">
+	var step=1
+	function slideit(){
+	
+	if(step<4)
+	{document.images.slide.src=eval("image"+step+".src")
+	step++}
+	else
+	step=1
+	setTimeout("slideit()",2500)
+	}
+	slideit()
+	</script>
+				
+				<h3>Food Glorious Food</h3>
+			</article>
+		</section>
+	
+	<aside>
+		<h3>Company Message</h3>
+		<p>From the food to the service, an event is a reflection of the host. We make sure that we create the right look, feel, and
+			taste for your event. Whether you are planning a holiday celebration, training session, company picnic or reception for
+			clients, let us be your partner for a successful event.</p>
+	</aside>
+	</div>
+	<br>
+	<div id="wrapperfoot">
+	<footer>
+		<small>
+			<i>Copyright &copy; 2015 How's Catering</i>
+			<br>
+			<a href="mailto:webmaster@howscatering.com">webmaster@howscatering.com</a>
+		</small>
+	</footer>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js\app.js"></script>
 </body>
+
 </html>

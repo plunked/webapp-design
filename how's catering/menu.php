@@ -22,7 +22,7 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href="menu.html"><h1>Menu</h1></a></li>
+				<li><a href="menu.php"><h1>Menu</h1></a></li>
 				<li><a href="ordering.html"><h1>Ordering</h1></a></li>
 				<li><a href="contact.html"><h1>Contact Us</h1></a></li>
 			</ul>
@@ -39,7 +39,7 @@
   }
   
   
-  sql = 'SELECT dish_name, dish_type, 
+  $sql = 'SELECT dish_name, dish_type, 
                dish_description, dish_img_location
         FROM dishes';
   mysql_select_db('f33ee');
@@ -61,7 +61,7 @@
 mysql_close($conn);
 
 
-} 
+ 
 
 	?>
 	<table align="center" border="1">

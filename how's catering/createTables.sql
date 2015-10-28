@@ -5,7 +5,7 @@ use f33ee;
 create table if not exists packages(
 	packageid int unsigned not null auto_increment primary key,
 	packagename char(140) not null,
-	packageit _cost tinyint not null, 
+	package_cost tinyint not null, 
 	main_1_choices char(140) not null,
 	main_2_choices char(140) not null,
 	opt_1_choices char(140) not null,

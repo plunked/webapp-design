@@ -23,7 +23,7 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href="menu.html"><h1>Menu</h1></a></li>
+				<li><a href="menu.php"><h1>Menu</h1></a></li>
 				<li><a href="ordering.html"><h1>Ordering</h1></a></li>
 				<li><a href="contact.html"><h1>Contact Us</h1></a></li>
 			</ul>
@@ -47,11 +47,6 @@
 						<option value="creditcard">Credit Card</option>
 						</select>
 						</p>
-					<?php
-					session_start();
-					echo $_SESSION['package_cost'];
-					echo $_SESSION['package_content'];
-					?>
 					<p><input type="submit" value="Confirm Details"></p>
 				</form>
 			</article>

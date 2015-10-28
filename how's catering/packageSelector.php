@@ -23,7 +23,7 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href="menu.html"><h1>Menu</h1></a></li>
+				<li><a href="menu.php"><h1>Menu</h1></a></li>
 				<li><a href="ordering.html"><h1>Ordering</h1></a></li>
 				<li><a href="contact.html"><h1>Contact Us</h1></a></li>
 			</ul>
@@ -39,7 +39,7 @@
 					$selectedPackage = $_POST['packageChoice'];
 
 					
-					@ $db = new mysqli('localhost', 'root', 'password', 'f33ee');
+					@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 	
 					if (mysqli_connect_errno()) {
 						echo 'Error: Could not connect to database.  Please try again later.';

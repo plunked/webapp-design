@@ -31,7 +31,7 @@
 	<body>
 	<?php
 	
-	@ $db = new mysqli('localhost', 'root', 'password', 'f33ee');
+	@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 
   if (mysqli_connect_errno()) {
      echo 'Error: Could not connect to database.  Please try again later.';

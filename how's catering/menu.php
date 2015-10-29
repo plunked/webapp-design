@@ -29,48 +29,69 @@
 		</nav>
 	</header>
 	<body>
-	<?php
+		<div id="wrapper">
+			<section>
+				<?php
+				session_start();
+			
+				@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 	
-	@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
-
-  if (mysqli_connect_errno()) {
-     echo 'Error: Could not connect to database.  Please try again later.';
-     exit;
-  }
-  $query = "SELECT dish_name, dish_type,dish_description, dish_img_location FROM dishes";
-  $result = $db->query($query);
-  echo $result;
-  $num_results = $result->num_rows;
-  
-  for ($i=0; $i <$num_results; $i++) {
-     $row = $result->fetch_assoc();
-	 echo $row['dish_name'];
-		echo $row['dish_type'];
-		echo $row['dish_discription'];
-		echo $row['dish_img_location'];
-  } 
-  $result->free();
-  $db->close();
-
-
- 
-
-	?>
-	<table align="center" border="1">
-	<tr>	<td>Image</td>
-			<td>description1</td>
-			<td>description2</td>
-			<td>description3</td>
-	</tr>
-	<tr>	<td>Image</td>
-			<td>description1</td>
-			<td>description2</td>
-			<td>description3</td>
-	</tr>
-	</table>
+				if (mysqli_connect_errno()) {
+						echo 'Error: Could not connect to database.  Please try again later.';
+						exit;
+				}
+				
+				$query = "SELECT * from dishes";
+				
+				$result = $db ->query($query);
+				/*
+				$result = $db->query($query);
+				How I diagnosed the problem: 
+				1. I noticed that the footer wasn't displaying
+				If the footer wasn't displaying, means there is something loose somewhere that throws an error that causes the page to stop loading.
+				
+				2. I inserted echo statements to identify the line of code causing the error. It eventually lead to the the $result = $db assignment line. 
+				
+				3. I analysed the line in comparison to the one on line 51 of packageSelector.php. The only difference was the spacing between the -> symbol. 
+				*/
+				
+				
+				$num_results = $result->num_rows;
+				for ($i=0; $i <$num_results; $i++) {
+					$row = $result->fetch_assoc();
+					echo $row['dish_id'];
+					echo $row['dish_type'];
+					echo $row['dish_name'];
+					echo $row['dish_description'];
+					echo $row['dish_img_location'];
+				}
+				
+				$result->free();
+				$db->close();
+		
+			?>
+			
+		<table align="center" border="1">
+			<tr>	
+				<td>Image</td>
+				<td>description1</td>
+				<td>description2</td>
+				<td>description3</td>
+			</tr>
+			<tr>
+				<td>Image</td>
+				<td>description1</td>
+				<td>description2</td>
+				<td>description3</td>
+			</tr>
+		</table>
+			
+			
+			</section>
+		</div>
 	</body>
 	 
-<!--link to database for menu images  -->	
+
 <div id="wrapperfoot">
 <footer>
 		<small>

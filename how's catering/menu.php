@@ -36,6 +36,7 @@
 			
 				@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 	
+
 				if (mysqli_connect_errno()) {
 						echo 'Error: Could not connect to database.  Please try again later.';
 						exit;
@@ -89,6 +90,23 @@
 			
 			</section>
 		</div>
+
+ 
+
+	?>
+	<table align="center" border="1">
+	<tr>	<td>Image</td>
+			<td>description1</td>
+			<td>description2</td>
+			<td>description3</td>
+	</tr>
+	<tr>	<td>Image</td>
+			<td>description1</td>
+			<td>description2</td>
+			<td>description3</td>
+	</tr>
+	</table>
+
 	</body>
 	 
 

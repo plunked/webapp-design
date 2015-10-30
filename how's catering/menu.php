@@ -45,26 +45,17 @@
 				$query = "SELECT * from dishes";
 				
 				$result = $db ->query($query);
-				/*
-				$result = $db->query($query);
-				How I diagnosed the problem: 
-				1. I noticed that the footer wasn't displaying
-				If the footer wasn't displaying, means there is something loose somewhere that throws an error that causes the page to stop loading.
-				
-				2. I inserted echo statements to identify the line of code causing the error. It eventually lead to the the $result = $db assignment line. 
-				
-				3. I analysed the line in comparison to the one on line 51 of packageSelector.php. The only difference was the spacing between the -> symbol. 
-				*/
-				
-				
+				echo "<table align='center' border='1'>";
 				$num_results = $result->num_rows;
 				for ($i=0; $i <$num_results; $i++) {
 					$row = $result->fetch_assoc();
-					echo $row['dish_id'];
-					echo $row['dish_type'];
-					echo $row['dish_name'];
-					echo $row['dish_description'];
-					echo $row['dish_img_location'];
+					
+					
+					echo "<tr><td>".$row['dish_name']."</td>";
+					echo "<td>".$row['dish_type']."</td>";
+					echo "<td>".$row['dish_description']."</td>";
+					echo "<td><img src=".$row['dish_img_location']."></td></tr>";
+				
 				}
 				
 				$result->free();
@@ -72,40 +63,12 @@
 		
 			?>
 			
-		<table align="center" border="1">
-			<tr>	
-				<td>Image</td>
-				<td>description1</td>
-				<td>description2</td>
-				<td>description3</td>
-			</tr>
-			<tr>
-				<td>Image</td>
-				<td>description1</td>
-				<td>description2</td>
-				<td>description3</td>
-			</tr>
-		</table>
-			
-			
+		
 			</section>
 		</div>
 
  
 
-	?>
-	<table align="center" border="1">
-	<tr>	<td>Image</td>
-			<td>description1</td>
-			<td>description2</td>
-			<td>description3</td>
-	</tr>
-	<tr>	<td>Image</td>
-			<td>description1</td>
-			<td>description2</td>
-			<td>description3</td>
-	</tr>
-	</table>
 
 	</body>
 	 

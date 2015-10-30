@@ -45,16 +45,17 @@
 				$query = "SELECT * from dishes";
 				
 				$result = $db ->query($query);
-				echo "<table align='center' border='1'>";
+				echo "<table align='center' border='0'>";
 				$num_results = $result->num_rows;
+				
+				
 				for ($i=0; $i <$num_results; $i++) {
 					$row = $result->fetch_assoc();
-					
-					
-					echo "<tr><td>".$row['dish_name']."</td>";
+					echo "<tr><td>".$row['dish_id']."</td>";
+					echo "<td>".$row['dish_name']."</td>";
 					echo "<td>".$row['dish_type']."</td>";
 					echo "<td>".$row['dish_description']."</td>";
-					echo "<td><img src=".$row['dish_img_location']."></td></tr>";
+					echo "<td><img src='".$row['dish_img_location']."'width='400' height='200'></td></tr>";
 				
 				}
 				
@@ -63,12 +64,8 @@
 		
 			?>
 			
-		
 			</section>
 		</div>
-
- 
-
 
 	</body>
 	 

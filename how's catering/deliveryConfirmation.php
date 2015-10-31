@@ -43,6 +43,7 @@
 					$delivery_time = $_POST['delivery_time'];
 					$collection_time = $_POST['collection_time'];
 					$payment_method = $_POST['payment_method'];
+					$payment_amount = ($_SESSION['pax'] * $_SESSION['package_cost']);
 					
 					echo "<p>Name: ".$contact_name."</p>";
 					echo "<p>Contact Number: ".$contact_number."</p>";
@@ -51,7 +52,7 @@
 					echo "<p>Delivery Time: ".$delivery_time."</p>";
 					echo "<p>Collection Time: ".$collection_time."</p>";
 					echo "<p>Payment Method: ".$payment_method."</p>";
-					echo "<p>Payment Amount: ".$_SESSION['package_cost']."</p>";
+					echo "<p>Payment Amount: $".$payment_amount."</p>";
 					echo "<p>Package Content: ".$_SESSION['package_content']."</p>";
 	
 					
@@ -71,7 +72,7 @@
 					
 					echo "<input type='hidden' value='".$payment_method."' name='payment_method'>";
 					
-					echo "<input type='hidden' value='".$_SESSION["package_cost"]."' name='payment_amount'>";
+					echo "<input type='hidden' value='".$payment_amount."' name='payment_amount'>";
 					
 					echo "<input type='hidden' value='".$_SESSION["package_content"]."' name='package_content'>";
 					

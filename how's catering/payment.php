@@ -46,6 +46,7 @@
 					$payment_method = $_POST['payment_method'];
 					$payment_amount = $_POST['payment_amount'];
 					$package_content = $_POST['package_content'];
+					$pax = $_SESSION['pax'];
 					
 					@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 	
@@ -54,6 +55,7 @@
 						exit;
 					}
 					
+					/* Testing if the form was posted properly
 					echo $contact_name;
 					echo $contact_number;
 					echo $contact_email;
@@ -63,6 +65,7 @@
 					echo $payment_method;
 					echo $payment_amount;
 					echo $package_content;
+					*/
 					
 					$query = "
 					INSERT INTO transactions
@@ -75,13 +78,16 @@
 					 $query .="'".$delivery_address."',";
 					 $query .="'".$delivery_time."',";
 					 $query .="'".$collection_time."',";
+					 $query .="".$pax.",";
 					 $query .="'".$payment_method."',";
 					 $query .="".$payment_amount.",";
 					 $query .="'".$package_content."'";
 					 $query .= ")";
 					
+					
 					echo $query;
 							
+					
 					$result = $db->query($query);
 					if ($result) {
 						echo  $db->affected_rows."transaction added";

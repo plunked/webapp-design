@@ -1,9 +1,9 @@
 use f33ee;
 
 insert into packages values
-(NULL, "Basic Package",50, "1,2,3", "1,2,3", "1,2,3", "1,2,3"),
-(NULL, "Intermediate Package",75, "1,2,3", "1,2,3", "1,2,3", "1,2,3"),
-(NULL, "Advanced Package",100, "1,2,3", "1,2,3", "1,2,3", "1,2,3");
+(NULL, "Basic Package",50, "1,2,3,4", "1,2,3,4", "1,2,3,4", "1,2,3,4"),
+(NULL, "Intermediate Package",75, "1,2,3,4,5", "1,2,3,4,5", "1,2,3,4,5", "1,2,3,4,5"),
+(NULL, "Advanced Package",100, "1,2,3,4,5,6", "1,2,3,4,5,6", "1,2,3,4,5,6", "1,2,3,4,5,6");
 
 insert into dishes values
 (null, "meat", "Chicken 65", "A traditional homestyle boneless crispy fried chicken cubes", "img/dishes/chicken65.jpg"),

@@ -36,6 +36,7 @@
 				<h3>Dish Confirmation</h3>
 				<?php 
 					session_start();
+					$pax = $_POST['pax'];
 					$mainChoice1 = $_POST['main1Selection'] -1;
 					$mainChoice2 = $_POST['main2Selection'] -1;
 					$optChoice1 = $_POST['opt1Selection'] -1;
@@ -59,7 +60,8 @@
 						$optChoice2Names[$key] = $value;				
 					}
 
-					echo $_SESSION['package_cost'];
+
+					echo "<p>Number of people attending: ".$pax."</p>";
 					echo "<h4>Dish 1<br></h4";
 					echo "<p>".$mainChoice1Names[$mainChoice1]."</p>";
 					
@@ -81,6 +83,8 @@
 					$_SESSION['optChoice2'] = $optChoice2.",".$optChoice2Names[$optChoice2];
 					
 					$_SESSION['package_content'] = $mainChoice1Names[$mainChoice1].','.$mainChoice2Names[$mainChoice2].','.$optChoice1Names[$optChoice1].','.$optChoice2Names[$optChoice2];
+					
+					$_SESSION['pax'] = $pax;
 								
 				?>
 				<form method="post" action="deliveryDetails.php">

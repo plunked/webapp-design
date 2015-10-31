@@ -34,6 +34,9 @@
 		<section>
 			<article>
 				<h3>Package Selector</h3>
+				
+				<form method='POST' action='dishConfirmation.php' id='packageSelect'>
+					<p>Number of people attending:<br> <input type="number" name="pax"></p>
 				<?php 
 				session_start();
 					$selectedPackage = $_POST['packageChoice'];
@@ -109,36 +112,36 @@
 					$_SESSION['optChoice2NameArr'] = $optChoice2Names;
 									
 
-					echo "<form method='POST' action='dishConfirmation.php' id='packageSelect'>";
+					
 					echo "<p>Main Dish 1<p>";
 					echo "<select name='main1Selection' form='packageSelect'>";
-					echo '<option value="'.$mainChoice1Arr[0].'">'.$mainChoice1Names[0].'</option>';
-					echo '<option value="'.$mainChoice1Arr[1].'">'.$mainChoice1Names[1].'</option>';
-					echo '<option value="'.$mainChoice1Arr[2].'">'.$mainChoice1Names[2].'</option>';
+					for($i=0;$i<count($mainChoice1Arr);$i++){
+						echo '<option value="'.$mainChoice1Arr[$i].'">'.$mainChoice1Names[$i].'</option>';
+					}
 					echo '</select>';
 					echo "<br>";
 					
 					echo "<p>Main Dish 2<p>";
 					echo "<select name='main2Selection' form='packageSelect'>";
-					echo '<option value="'.$mainChoice2Arr[0].'">'.$mainChoice2Names[0].'</option>';
-					echo '<option value="'.$mainChoice2Arr[1].'">'.$mainChoice2Names[1].'</option>';
-					echo '<option value="'.$mainChoice2Arr[2].'">'.$mainChoice2Names[2].'</option>';
+					for($i=0;$i<count($mainChoice2Arr);$i++){
+						echo '<option value="'.$mainChoice2Arr[$i].'">'.$mainChoice2Names[$i].'</option>';
+					}
 					echo '</select>';
 					echo "<br>";
 					
 					echo "<p>Side Dish 1<p>";
 					echo "<select name='opt1Selection' form='packageSelect'>";
-					echo '<option value="'.$optChoice1Arr[0].'">'.$optChoice1Names[0].'</option>';
-					echo '<option value="'.$optChoice1Arr[1].'">'.$optChoice1Names[1].'</option>';
-					echo '<option value="'.$optChoice1Arr[2].'">'.$optChoice1Names[2].'</option>';
+					for($i=0;$i<count($optChoice1Arr);$i++){
+						echo '<option value="'.$optChoice1Arr[$i].'">'.$optChoice1Names[$i].'</option>';
+					}
 					echo '</select>';
 					echo "<br>";
 					
 					echo "<p>Side Dish 1<p>";
 					echo "<select name='opt2Selection' form='packageSelect'>";
-					echo '<option value="'.$optChoice2Arr[0].'">'.$optChoice2Names[0].'</option>';
-					echo '<option value="'.$optChoice2Arr[1].'">'.$optChoice2Names[1].'</option>';
-					echo '<option value="'.$optChoice2Arr[2].'">'.$optChoice2Names[2].'</option>';
+					for($i=0;$i<count($optChoice2Arr);$i++){
+						echo '<option value="'.$optChoice2Arr[$i].'">'.$optChoice2Names[$i].'</option>';
+					}
 					echo '</select>';
 					echo "<br>";
 					echo '<input type="submit" value="Confirm">';

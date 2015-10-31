@@ -69,7 +69,7 @@
 					
 					$query = "
 					INSERT INTO transactions
-					 (transaction_id, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, payment_method, payment_amount, package_content) 
+					 (transaction_id, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, pax, payment_method, payment_amount, package_content) 
 					 VALUES";
 					 $query .="(null,";
 					 $query .="'".$contact_name."',";
@@ -92,7 +92,7 @@
 					if ($result) {
 						echo  $db->affected_rows."transaction added";
 					} else {
-						echo "An error has occurred.  The transaction failed.";
+						$value = mysql_query($your_query) or die("A MySQL error has occurred.<br />Your Query: " . $your_query . "<br /> Error: (" . mysql_errno() . ") " . mysql_error());
 					}
 								
 				?>

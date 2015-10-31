@@ -30,6 +30,6 @@ create table if not exists dishes(
 	dish_id int unsigned not null auto_increment primary key, 
 	dish_type char(140) not null,
 	dish_name char(140) not null,
-	dish_description char(140) not null,
+	dish_description text not null,
 	dish_img_location char(255) not null
 );

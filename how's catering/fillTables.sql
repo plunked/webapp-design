@@ -14,5 +14,7 @@ insert into dishes values
 (null, "Vegetables", "Chilli Paneer", "Paneer cubes sauted to its perfection in thin slices od onion, red and green peppers", "img/dishes/fishTikka.jpg"),
 (null, "Vegetables", "Mixed Vegetables", "Yellow lentils tempered with aromatic spices", "img/dishes/fishTikka.jpg");
 
+/*
 insert into transactions values
-(null, "Rubern", 81830747, "m.rubern.c@gmail.com", "APT BLK 290B BUKIT BATOK ST24 #17-75 S653290", "1100", "1700", "Paypal", 50);
+(null, "Rubern", 81830747, "m.rubern.c@gmail.com", "APT BLK 290B BUKIT BATOK ST24 #17-75 S653290", "1100", "1700",10, "Paypal", 500, "1,2,3");
+*/

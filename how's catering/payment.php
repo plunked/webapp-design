@@ -84,9 +84,9 @@
 					 $query .="'".$package_content."'";
 					 $query .= ")";
 					
-					
+					/*
 					echo $query;
-							
+					*/
 					
 					$result = $db->query($query);
 					if ($result) {
@@ -94,7 +94,13 @@
 					} else {
 						$value = mysql_query($your_query) or die("A MySQL error has occurred.<br />Your Query: " . $your_query . "<br /> Error: (" . mysql_errno() . ") " . mysql_error());
 					}
-								
+					
+					$transQuery = "SELECT transaction_id FROM transactions WHERE transaction_id = LAST_INSERT_ID()";
+					$transaction_result = $db->query($transQuery);
+					$row = $transaction_result->fetch_assoc();
+					
+					echo "<br><br>Your transaction reference number is ".$row['transaction_id'];
+					
 				?>
 				
 			</article>

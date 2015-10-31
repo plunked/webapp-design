@@ -51,7 +51,7 @@
 					$result = $db ->query($query);
 					$row = $result->fetch_assoc();
 					
-					$packageID = $row['packageid'];
+					$packageID = $row['package_id'];
 					$packageName = $row['packagename'];
 					$packageCost = $row['package_cost'];
 					$mainChoice1 = $row['main_1_choices'];

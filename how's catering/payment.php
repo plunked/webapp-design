@@ -66,7 +66,7 @@
 					
 					$query = "
 					INSERT INTO transactions
-					 (transactionid, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, payment_method, payment_amount, package_content) 
+					 (transaction_id, contact_name, contact_number, contact_email, delivery_address, delivery_time, collection_time, payment_method, payment_amount, package_content) 
 					 VALUES";
 					 $query .="(null,";
 					 $query .="'".$contact_name."',";

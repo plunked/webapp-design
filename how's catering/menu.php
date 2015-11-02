@@ -43,7 +43,7 @@
 						exit;
 				}
 				
-				$query = "SELECT * from dishes";
+				$query = "SELECT * from dishes ";
 				
 				$result = $db ->query($query);
 				$num_results = $result->num_rows;

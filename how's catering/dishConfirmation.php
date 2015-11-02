@@ -82,7 +82,7 @@
 					
 					$_SESSION['optChoice2'] = $optChoice2.",".$optChoice2Names[$optChoice2];
 					
-					$_SESSION['package_content'] = $mainChoice1Names[$mainChoice1].','.$mainChoice2Names[$mainChoice2].','.$optChoice1Names[$optChoice1].','.$optChoice2Names[$optChoice2];
+					$_SESSION['package_content'] = $mainChoice1Names[$mainChoice1].', '.$mainChoice2Names[$mainChoice2].', '.$optChoice1Names[$optChoice1].', '.$optChoice2Names[$optChoice2];
 					
 					$_SESSION['pax'] = $pax;
 								

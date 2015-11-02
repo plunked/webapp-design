@@ -17,7 +17,7 @@
 		<div id="transactionBox">
 			<form action="transaction_enquiry.php" action="post">
 				<span id="h5">Transaction Enquiry:</span>
-				<input type="text" placeholder="Transaction Reference Number" name="transaction_reference_number">
+				<input type="number" placeholder="Transaction Reference Number" name="transaction_reference_number">
 				<input type="submit" value=">">
 			</form>
 		</div>
@@ -45,8 +45,11 @@
 					exit;
 				}
 				
-				$query = 'select * from transactions where transaction_id ='.$inputTransactionReference;
+				
+				$query = "select * from transactions where transaction_id like '%".$inputTransactionReference."%'";
+
 				$result = $db->query($query);
+				
 				$row = $result->fetch_assoc();
 				
 				$transaction_id = $row['transaction_id'];
@@ -61,16 +64,16 @@
 				$payment_amount = $row['payment_amount'];
 				$package_content = $row['package_content'];
 				
-				echo "Contact Name: ".$contact_name;
-				echo "Contact Email: ".$contact_email;
-				echo "Contact Number: ".$contact_number;
-				echo "Delivery Address: ".$delivery_address;
-				echo "Delivery Time: ".$delivery_time;
-				echo "Collection Time: ".$collection_time;
-				echo "Pax: ".$pax;
-				echo "Payment Method: ".$payment_method;
-				echo "Payment Amount: ".$payment_amount;
-				echo "Package Contents: ".$package_content;
+				echo "<p>"."Contact Name: ".$contact_name."</p>";
+				echo "<p>"."Contact Email: ".$contact_email."</p>";
+				echo "<p>"."Contact Number: ".$contact_number."</p>";
+				echo "<p>"."Delivery Address: ".$delivery_address."</p>";
+				echo "<p>"."Delivery Time: ".$delivery_time."</p>";
+				echo "<p>"."Collection Time: ".$collection_time."</p>";
+				echo "<p>"."Pax: ".$pax."</p>";
+				echo "<p>"."Payment Method: ".$payment_method."</p>";
+				echo "<p>"."Payment Amount: ".$payment_amount."</p>";
+				echo "<p>"."Package Contents: ".$package_content."</p>";
 				
 				
 				?>

@@ -36,11 +36,18 @@
 				<h3>Delivery Details</h3>
 				<form method="post" action="deliveryConfirmation.php" id="deliveryConfirmation">
 					<p>Name: <input type="text" name="contact_name" placeholder="Legal Name" required></p>
-					<p>Contact Number: <input type="tel" name="contact_number" required></p>
-					<p>Contact Email: <input type="email" name="contact_email" required></p>
-					<p>Delivery Address: <input type="text" name="delivery_address" required></p>
-					<p>Delivery Time: <input type="datetime-local" name="delivery_time" required></p>
-					<p>Collection Time: <input type="datetime-local" name="collection_time" required></p>
+					<p>Contact Number: <input type="tel" name="contact_number" id="contact_number" maxlength="8" required></p>
+					<p>Contact Email: <input type="email" name="contact_email" id="contact_email" required></p>
+					<p>Delivery Address: <input type="text" name="delivery_address" id="delivery_address" required></p>
+					<p>
+						Delivery Time: 
+						<input type="datetime-local" name="delivery_date" id="delivery_date" placeholder="Date eg DDMMYYYY" maxlength="8" required>
+						<input type="datetime-local" name="delivery_time" id="delivery_time" placeholder="Time eg 1300" maxlength="4" required>
+					</p>
+					<p>Collection Time: 
+						<input type="datetime-local" name="collection_date" id="collection_date" placeholder="Date eg DDMMYYYY" maxlength="8" required>
+						<input type="datetime-local" name="collection_time" id="collection_time" placeholder="Time eg 1300" maxlength="4" required>
+					</p>
 					<p>Payment Method: <select name="payment_method" form="deliveryConfirmation">
 						<option value="paypal">Paypal</option>
 						<option value="cash">Cash</option>

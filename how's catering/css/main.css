@@ -44,10 +44,12 @@ img{
 
 /*Headings*/
 h1{
-	margin: 10px 0;
+	text-align:center; 
+	margin: 0px auto 0px auto;
 	font-size: 1.75em;
 	font-weight: normal;
 	line-height: 0.8em;
+	float: right;
 }
 
 h2{
@@ -94,9 +96,10 @@ nav li{
 }
 
 nav a{
+	text-align:centre;
 	display: block;
 	width: 60px;
-	padding: 20px;
+	padding: 60px;
 }
 
 nav a.active, nav a:hover{

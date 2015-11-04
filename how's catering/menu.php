@@ -29,9 +29,9 @@
 		</nav>
 	</header>
 	
-	<body>
+	
 		<div id="wrapper">
-			<section>
+			
 				<?php
 				session_start();
 			
@@ -64,18 +64,18 @@
 				$db->close();
 		
 			?>
-			
-			</section>
-		</div>
 		
-	<footer>
-		<small>
+		</div>
+<br>
+	<div id="wrapperfoot">
+		<footer>
+			<small>
 			<i>Copyright &copy; 2015 How's Catering</i>
 			<br>
 			<a href="mailto:webmaster@howscatering.com">webmaster@howscatering.com</a>
 		</small>
-	</footer>
-
+		</footer>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="js\app.js"></script>
 </body>

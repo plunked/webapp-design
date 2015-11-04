@@ -14,10 +14,13 @@
 
 function checkContactNumber() {
 	var input = $("#contact_number").val();
-	if (input[0] != 6 || 9 || 9){
+	if (input[0] != 6 || 8 || 9){
 		document.getElementById("contact_number").setCustomValidity("Phone number does not match local format");
 	}
 }
+$('#contact_number').change(function () {
+	checkContactNumber();
+});
 
 // 1.4 delivery date input in DDMMYY
 function validateDeliveryDate() {
@@ -40,7 +43,7 @@ function validateDeliveryDate() {
 		document.getElementById("delivery_date").setCustomValidity("Delivery date does not match specified format")
 	}
 	
-	if (!parseInt(inputYYYY)|| inputYYYY < 2016 || inputYYYY > 2015){
+	if (!parseInt(inputYYYY)|| inputYYYY > 2016 || inputYYYY < 2015){
 		document.getElementById("delivery_date").setCustomValidity("Delivery date does not match specified format")
 	}
 	
@@ -59,6 +62,9 @@ function validateDeliveryDate() {
 	}
 	
 }
+$('#delivery_date').change(function () {
+	validateDeliveryDate();
+});
 // 1.5 delivery_time input in 24hrs format
 
 function validateDeliveryTime() {
@@ -70,20 +76,22 @@ function validateDeliveryTime() {
 		inputTime = parseInt(inputTime, 10);
 	}
 	
-	if (inputTime < 2400 || inputTime > 0) {
+	if (inputTime > 2400 || inputTime < 0) {
 		document.getElementById("delivery_time").setCustomValidity("Time not in correct format");		
 	}
-	
 }
+$('#delivery_time').change(function () {
+	validateDeliveryTime();
+})
  
 // 1.6 collection date input in DDMMYY
 function validateCollectionDate() {
 	var deliveryDate = $("#delivery_date").val();
 	var collectionDate = $('#collection_date').val();
 	
-	var inputDD = inputDate.slice(0, 1);
-	var inputMM = inputDate.slice(2, 3);
-	var inputYYYY = inputDate.slice(4);
+	var inputDD = deliveryDate.slice(0, 1);
+	var inputMM = deliveryDate.slice(2, 3);
+	var inputYYYY = deliveryDate.slice(4);
 	
 	var collectionDD = collectionDate.slice(0, 1);
 	var collectionMM = collectionDate.slice(2, 3);
@@ -101,6 +109,9 @@ function validateCollectionDate() {
 		document.getElementById("collection_date").setCustomValidity("Delivery date does not match specified format")
 	}
 }
+$('#delivery_date').change(function () {
+	validateCollectionDate();
+});
 
 // 1.7 collection_time input in 24hrs format
 function validateCollectionTime() {
@@ -116,13 +127,14 @@ function validateCollectionTime() {
 		collectionTime = parseInt(collectionTime, 10);
 	}
 	
-	if (collectionTime < 2400 || collectionTime > 0) {
+	if (collectionTime > 2400 || collectionTime < 0) {
 		document.getElementById("collection_time").setCustomValidity("Time not in correct format");		
 	}
 	
 	if (deliveryDate == collectionDate && collectionTime < deliveryTime){
 		document.getElementById("collection_time").setCustomValidity("Collection time cannot be before delivery time");	
 	}
-	
-
 }
+$('#collection_time').change(function () {
+	validateCollectionTime();
+});

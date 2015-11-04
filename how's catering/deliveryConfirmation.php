@@ -40,16 +40,22 @@
 					$contact_number = $_POST['contact_number'];
 					$contact_email = $_POST['contact_email'];
 					$delivery_address = $_POST['delivery_address'];
+					$delivery_date = $_POST['delivery_date'];
 					$delivery_time = $_POST['delivery_time'];
+					$collection_date = $_POST['collection_date'];
 					$collection_time = $_POST['collection_time'];
 					$payment_method = $_POST['payment_method'];
 					$payment_amount = ($_SESSION['pax'] * $_SESSION['package_cost']);
+					$deliveryDateTime = $delivery_date." ".$delivery_time;
+					$collectionDatetime = $collection_date." ".$collection_time;
 					
 					echo "<p>Name: ".$contact_name."</p>";
 					echo "<p>Contact Number: ".$contact_number."</p>";
 					echo "<p>Contact Email: ".$contact_email."</p>";
 					echo "<p>Delivery Address: ".$delivery_address."</p>";
+					echo "<p>Delivery Date: ".$delivery_date."</p>";
 					echo "<p>Delivery Time: ".$delivery_time."</p>";
+					echo "<p>Collection Date: ".$collection_date."</p>";
 					echo "<p>Collection Time: ".$collection_time."</p>";
 					echo "<p>Payment Method: ".$payment_method."</p>";
 					echo "<p>Payment Amount: $".$payment_amount."</p>";
@@ -66,9 +72,9 @@
 					
 					echo "<input type='hidden' value='".$delivery_address."' name='delivery_address'>";
 					
-					echo "<input type='hidden' value='".$delivery_time."' name='delivery_time'>";
+					echo "<input type='hidden' value='".$deliveryDateTime."' name='delivery_time'>";
 					
-					echo "<input type='hidden' value='".$collection_time."' name='collection_time'>";
+					echo "<input type='hidden' value='".$collectionDatetime."' name='collection_time'>";
 					
 					echo "<input type='hidden' value='".$payment_method."' name='payment_method'>";
 					
@@ -94,7 +100,7 @@
 	</footer>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="js\app.js"></script>
+	<script src="js/app.js"></script>
 </body>
 
 </html>

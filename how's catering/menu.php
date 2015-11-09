@@ -14,9 +14,9 @@
 			<img src="img/Logo trans.png">
 		</a>
 		<div id="transactionBox">
-			<form action="transaction_enquiry.php" action="post">
+			<form action="transaction_enquiry.php" action="GET">
 				<span id="h5">Transaction Enquiry:</span>
-				<input type="text" placeholder="Transaction Reference Number" name="transaction_reference_number">
+				<input type="text" placeholder="Transaction Reference Number" name="transaction_ref">
 				<input type="submit" value=">">
 			</form>
 		</div>

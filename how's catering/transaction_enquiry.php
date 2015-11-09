@@ -15,9 +15,9 @@
 			<img src="img/Logo trans.png">
 		</a>
 		<div id="transactionBox">
-			<form action="transaction_enquiry.php" action="post">
+			<form action="transaction_enquiry.php" action="GET">
 				<span id="h5">Transaction Enquiry:</span>
-				<input type="number" placeholder="Transaction Reference Number" name="transaction_reference_number">
+				<input type="text" placeholder="Transaction Reference Number" name="transaction_ref">
 				<input type="submit" value=">">
 			</form>
 		</div>
@@ -35,9 +35,9 @@
 			<article>
 				<h3>Transaction Enquiry</h3>
 				<?php
-				$inputTransactionReference = $_POST['transaction_reference_number'];
+				$inputTransactionReference = $_GET['transaction_ref'];
 				session_start();
-				
+								
 				@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 	
 				if (mysqli_connect_errno()) {
@@ -46,8 +46,8 @@
 				}
 				
 				
-				$query = "select * from transactions where transaction_id like '%".$inputTransactionReference."%'";
-
+				$query = "SELECT * from transactions where transaction_id =".$inputTransactionReference."";
+				
 				$result = $db->query($query);
 				
 				$row = $result->fetch_assoc();

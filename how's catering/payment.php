@@ -15,9 +15,9 @@
 			<img src="img/Logo trans.png">
 		</a>
 		<div id="transactionBox">
-			<form action="transaction_enquiry.php" action="post">
+			<form action="transaction_enquiry.php" action="GET">
 				<span id="h5">Transaction Enquiry:</span>
-				<input type="text" placeholder="Transaction Reference Number" name="transaction_reference_number">
+				<input type="text" placeholder="Transaction Reference Number" name="transaction_ref">
 				<input type="submit" value=">">
 			</form>
 		</div>
@@ -37,10 +37,10 @@
 				<p>Filler Payment Filler</p>
 				<?php 
 					session_start();
-					$contact_name = $_POST['contact_name'];
+					$contact_name = trim($_POST['contact_name']);
 					$contact_number = $_POST['contact_number'];
 					$contact_email = $_POST['contact_email'];
-					$delivery_address = $_POST['delivery_address'];
+					$delivery_address = trim($_POST['delivery_address']);
 					$delivery_time = $_POST['delivery_time'];
 					$collection_time = $_POST['collection_time'];
 					$payment_method = $_POST['payment_method'];

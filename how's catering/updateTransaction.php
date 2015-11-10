@@ -30,19 +30,19 @@
 				if ($db->connect_error) {
 					die('Connect Error ('.$db->connect_errno.') '.$db->connect_error);
 				}
-					$transaction_id = $_POST['transaction_id'];
-					$contact_name = $_POST['contact_name'];
-					$contact_number = $_POST['contact_number'];
-					$contact_email = $_POST['contact_email'];
-					$delivery_address = $_POST['delivery_address'];
-					$delivery_date = $_POST['delivery_date'];
-					$delivery_time = $_POST['delivery_time'];
-					$collection_date = $_POST['collection_date'];
-					$collection_time = $_POST['collection_time'];
-					$pax = $_POST['pax'];
-					$payment_method = $_POST['payment_method'];
-					$payment_amount = $_POST['payment_amount'];
-					$package_content = $_POST['package_content'];
+					$transaction_id = $_GET['transaction_id'];
+					$contact_name = $_GET['contact_name'];
+					$contact_number = $_GET['contact_number'];
+					$contact_email = $_GET['contact_email'];
+					$delivery_address = $_GET['delivery_address'];
+					$delivery_date = $_GET['delivery_date'];
+					$delivery_time = $_GET['delivery_time'];
+					$collection_date = $_GET['collection_date'];
+					$collection_time = $_GET['collection_time'];
+					$pax = $_GET['pax'];
+					$payment_method = $_GET['payment_method'];
+					$payment_amount = $_GET['payment_amount'];
+					$package_content = $_GET['package_content'];
 					
 					echo "Transaction ID: ".$transaction_id;
 					

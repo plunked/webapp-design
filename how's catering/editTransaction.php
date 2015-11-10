@@ -33,16 +33,9 @@
 				}
 						
 					$editTarget = $_GET['editTarget'];
-					echo "This is the editTarget: ".$editTarget;
 					$query = "SELECT * from transactions where transaction_id =".$editTarget."";
 					
 					$result = $db->query($query);
-					if ($result) {
-						echo  $db->affected_rows."row affected";
-					} else {
-						$value = mysql_query($query) or die("A MySQL error has occurred.<br />Your Query: " . $query . "<br /> Error: (" . mysql_errno() . ") " . mysql_error());
-					}
-					
 					$row = $result->fetch_assoc();
 					
 					$transaction_id = $row['transaction_id'];
@@ -56,7 +49,7 @@
 					$payment_method = $row['payment_method'];
 					$payment_amount = $row['payment_amount'];
 					$package_content = $row['package_content'];
-					
+					echo $package_content;
 										
 					echo "<form action='updateTransaction.php' method='GET'";
 					echo "<p>"."Transaction ID: "."<input type='number' name='transaction_id' value=".$transaction_id.">"."</p>";
@@ -69,7 +62,7 @@
 					echo "<p>"."Pax: "."<input type='number' name='pax' value=".$pax.">"."</p>";
 					echo "<p>"."Payment Method: "."<input type='text' name='payment_method' value=".$payment_method.">"."</p>";
 					echo "<p>"."Payment Amount: "."<input type='number' name='payment_amount' value=".$payment_amount.">"."</p>";
-					echo "<p>"."Package Contents: "."<input type='text' name='package_content' value=".$package_content.">"."</p>";
+					echo "<p>"."Package Contents: "."<input type='text' name='package_content' value='".$package_content."'>"."</p>";
 	
 				?>
 				

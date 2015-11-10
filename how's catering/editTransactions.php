@@ -91,7 +91,9 @@
 					}
 				
 				echo "</form>";
-
+				?>
+				
+				<?php	
 					
 					if(isset($_GET)){
 						
@@ -114,7 +116,7 @@
 					
 										
 					echo "<form action='updateTransaction.php' method='POST'";
-					
+					echo "<input type='hidden' name='transaction_id' value='".$transaction_id."'".">";
 					echo "<p>"."Name: "."<input type='text' name='contact_name' value=".$contact_name.">"."</p>";
 					echo "<p>"."Email: "."<input type='email' name='contact_email' value=".$contact_email.">"."</p>";
 					echo "<p>"."Contact Number: "."<input type='tel' name='contact_number' value=".$contact_number.">"."</p>";

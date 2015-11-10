@@ -27,9 +27,8 @@
 				@ $db = new mysqli('localhost', 'f33ee', 'f33ee', 'f33ee');
 				/*If it was truly an internal page, another user would have been created and authorized in phpmyadmin*/
 	
-				if (mysqli_connect_errno()) {
-					echo 'Error: Could not connect to database.  Please try again later.';
-					exit;
+				if ($db->connect_error) {
+					die('Connect Error ('.$db->connect_errno.') '.$db->connect_error);
 				}
 					$transaction_id = $_POST['transaction_id'];
 					$contact_name = $_POST['contact_name'];
@@ -45,7 +44,9 @@
 					$payment_amount = $_POST['payment_amount'];
 					$package_content = $_POST['package_content'];
 					
-				$query ="UPDATE transactions";
+					echo "Transaction ID: ".$transaction_id;
+					
+				$query ="UPDATE transactions ";
 				$query .="SET ";
 				$query .="contact_name='".$contact_name."'".",";
 				$query .="contact_number=".$contact_number.",";
@@ -56,15 +57,18 @@
 				$query .="pax='".$pax."'".",";
 				$query .="payment_method='".$payment_method."'".",";
 				$query .="payment_amount='".$payment_amount."'".",";
-				$query .="package_content='".$package_content."'"."";
+				$query .="package_content='".$package_content."'"." ";
 				$query .="WHERE transaction_id=".$transaction_id."";
+				
+
 			
 				
 				$result = $db->query($query);
+				
 					if ($result) {
 						echo  $db->affected_rows."transaction added";
 					} else {
-						$value = mysql_query($your_query) or die("A MySQL error has occurred.<br />Your Query: " . $your_query . "<br /> Error: (" . mysql_errno() . ") " . mysql_error());
+						$value = mysql_query($query) or die("A MySQL error has occurred.<br />Your Query: " . $query . "<br /> Error: (" . mysql_errno() . ") " . mysql_error());
 					}
 				
 				

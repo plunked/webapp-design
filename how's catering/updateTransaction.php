@@ -44,7 +44,7 @@
 					$payment_amount = $_GET['payment_amount'];
 					$package_content = $_GET['package_content'];
 					
-					echo "Transaction ID: ".$transaction_id;
+
 					
 				$query ="UPDATE transactions ";
 				$query .="SET ";
@@ -70,7 +70,10 @@
 					} else {
 						$value = mysql_query($query) or die("A MySQL error has occurred.<br />Your Query: " . $query . "<br /> Error: (" . mysql_errno() . ") " . mysql_error());
 					}
-				
+					
+				echo "<br>Redirecting you back to transaction select in 3 seconds.";
+					
+				header('Refresh: 3;url=selectTransactions.php');
 				
 				?>
 					

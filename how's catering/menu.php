@@ -31,7 +31,7 @@
 	
 	
 		<div id="wrapper">
-			
+			<ul id="gallery">
 				<?php
 				session_start();
 			
@@ -48,15 +48,14 @@
 				$result = $db ->query($query);
 				$num_results = $result->num_rows;
 				
-				echo "<table align='center' border='0'>";
 				
 				for ($i=0; $i <$num_results; $i++) {
 					$row = $result->fetch_assoc();
-					echo "<tr><td>".$row['dish_id']."</td>";
-					echo "<td>".$row['dish_name']."</td>";
-					echo "<td>".$row['dish_type']."</td>";
-					echo "<td>".$row['dish_description']."</td>";
-					echo "<td><img src='".$row['dish_img_location']."'width='400' height='200'></td></tr>";
+					echo "<li>";
+					echo "<img src='".$row['dish_img_location']."'width='300' height='200'></td></tr>";
+					echo "<p>".$row['dish_name']."<br>";
+					echo "".$row['dish_description']."</p>";
+					
 				
 				}
 				
@@ -64,10 +63,10 @@
 				$db->close();
 		
 			?>
-		
+		</ul>
 		</div>
 <br>
-	<div id="wrapperfoot">
+
 		<footer>
 			<small>
 			<i>Copyright &copy; 2015 How's Catering</i>
@@ -75,7 +74,7 @@
 			<a href="mailto:webmaster@howscatering.com">webmaster@howscatering.com</a>
 		</small>
 		</footer>
-	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="js/app.js"></script>
 </body>

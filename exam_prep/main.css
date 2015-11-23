@@ -1,0 +1,162 @@
+/**********************************
+GENERAL
+***********************************/
+
+/**********************************
+Color Codes
+Background - #ECDFBD
+Wrapper - #20457C
+outline color - #FB6648
+box background - #3B3A35
+***********************************/
+
+body{
+	background-color: #ECDFBD;
+	color: white;
+	font-family: 'Comfortaa', cursive;
+	margin: 0;
+	padding: 0;
+}
+
+
+#wrapper{
+	max-width: 940px;
+	margin: 10px auto 10px auto;
+	background-color: #20457C;
+	overflow: hidden;
+	padding: 20px;
+	text-align:center;
+}
+
+#wrapper h3{
+	text-align: center;
+	margin: 15px 0;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+img{
+	max-width: 100%;
+}
+
+/*Headings*/
+h1{
+	text-align:center; 
+	margin: 0px auto 0px auto;
+	font-size: 1.75em;
+	font-weight: normal;
+	line-height: 0.8em;
+	float: right;
+}
+
+h2{
+	font-size: 0.75em;
+	margin: -5px 0 0;
+	font-weight: normal;
+}
+
+#logo{
+	text-align: center;
+	margin: 0 0 50px;
+}
+
+#transactionBox{
+	background-color: #3B3A35;
+	width: 380px;
+	height: 30px;
+	margin: 10px;
+	padding: 5px;
+	float: right;
+}
+
+
+/**********************************
+NAVIGATION
+***********************************/
+nav{
+	text-align: center;
+	background-color: #20457C;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+nav li{
+	float: left;
+	margin-left: auto; 
+	margin-right: auto; 
+	
+}
+
+nav a{
+	text-align:centre;
+	display: block;
+	width: 60px;
+	padding: 60px;
+}
+
+nav a.active, nav a:hover{
+	color: orange;
+}
+
+
+/**********************************
+FOOTER
+***********************************/
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+  clear: both;
+  background-color: #20457C;
+}
+
+aside{
+	clear: both;
+	text-align: center;
+}
+
+#wrapperfoot{
+	text-align: center;
+	margin: 0 auto;
+	padding: 0px;
+	background-color: #20457C;
+}
+
+/*Portfolio*/
+
+#gallery{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background-color:  #20457C !important;
+}
+
+#gallery li{
+	float: left;
+	width: 45%;
+	margin: 2.5%;
+}
+
+
+#gallery li p{
+	margin: 0;
+	padding: 5%;
+	font-size: 0.75em;
+	text-align: center;
+}
+
+
+
+/**********************************
+COLORS
+***********************************/

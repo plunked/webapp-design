@@ -82,7 +82,14 @@ function chkPassword(event){
     myEmail.select();
   }
 
-
-
 }
+      var customerNode = document.getElementById("custName");
+      var phoneNode = document.getElementById("phone");
+      var emailNode = document.getElementById("email");
+      var passwordNode = document.getElementById("pwd");
+      customerNode.addEventListener("change", chkName, false);
+      phoneNode.addEventListener("change", chkPhone, false);
+      emailNode.addEventListener("change", chkEmail, false);
+      passwordNode.addEventListener("change", chkPassword, false);
+
 
